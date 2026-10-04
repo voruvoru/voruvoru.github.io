@@ -1,0 +1,156 @@
+{
+  "site": {
+    "heroEyebrow": "🌸 Commissions Open",
+    "heroTitleLine1": "Your Character,",
+    "heroTitleAccent": "Chibi-fied.",
+    "heroSubtitle": "Adorable custom art for VTubers, streamers & anime fans. Twitch emotes · PNG tubers · Character sheets 💕",
+    "happyClients": "200+",
+    "delivery": "48h",
+    "rating": "⭐ 5.0",
+    "contactEmail": "rrudiawan@gmail.com"
+  },
+  "gallery": [
+    {
+      "title": "VTuber Avatar",
+      "category": "avatar",
+      "image": ""
+    },
+    {
+      "title": "Twitch Emote Pack",
+      "category": "emote",
+      "image": ""
+    },
+    {
+      "title": "Full-Body Commission",
+      "category": "fullbody",
+      "image": ""
+    },
+    {
+      "title": "Merch Art",
+      "category": "merch",
+      "image": ""
+    },
+    {
+      "title": "Original Character",
+      "category": "avatar",
+      "image": ""
+    },
+    {
+      "title": "Emote Bundle",
+      "category": "emote",
+      "image": ""
+    }
+  ],
+  "pricing": [
+    {
+      "key": "headshot",
+      "icon": "🙂",
+      "name": "Headshot",
+      "description": "Bust-up portrait — profile pics & stream overlays.",
+      "price": 30,
+      "suffix": "/personal",
+      "delivery": "3–5 business days",
+      "features": [
+        "1 character",
+        "Simple / gradient BG",
+        "PNG + PSD",
+        "1 revision"
+      ]
+    },
+    {
+      "key": "halfbody",
+      "icon": "✨",
+      "name": "Half-Body",
+      "description": "Waist-up — Discord stickers & banners.",
+      "price": 50,
+      "suffix": "/personal",
+      "delivery": "5–7 business days",
+      "features": [
+        "1 character",
+        "Detailed BG",
+        "PNG + PSD",
+        "2 revisions",
+        "Accessories"
+      ],
+      "featured": true
+    },
+    {
+      "key": "fullbody",
+      "icon": "🌟",
+      "name": "Full-Body",
+      "description": "Full character sheet — VTuber refs & merch prints.",
+      "price": 70,
+      "suffix": "/personal",
+      "delivery": "7–10 business days",
+      "features": [
+        "1 character",
+        "Full painted BG",
+        "PNG + PSD",
+        "3 revisions",
+        "Front + back poses"
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "title": "Top 5 VTuber Chibi Emote Ideas for New Streamers",
+      "excerpt": "Discover the most engaging emote expressions to boost your Twitch subs and chat activity — perfect for debut streams.",
+      "url": "articles/top-5-vtuber-emote-ideas.html",
+      "tags": [
+        "🌍 Global / English",
+        "💡 Tips"
+      ],
+      "image": ""
+    },
+    {
+      "title": "How I Draw Chibi Eyes — Step-by-Step with Clip Studio Paint",
+      "excerpt": "A quick walkthrough of my coloring process — from sketch to final shading using Clip Studio Paint and Wacom Cintiq.",
+      "url": "articles/how-i-draw-chibi-eyes.html",
+      "tags": [
+        "🎨 Tutorial",
+        "🌏 EN/ID"
+      ],
+      "image": ""
+    },
+    {
+      "title": "The Ultimate VTuber Asset Checklist: What to Order Before Your Debut",
+      "excerpt": "From PNG tubers to overlay emotes — here's exactly what art assets you need ready before going live on YouTube or Twitch.",
+      "url": "articles/vtuber-asset-checklist.html",
+      "tags": [
+        "🌍 Global / English",
+        "📣 Guide"
+      ],
+      "image": ""
+    }
+  ],
+  "news": [
+    {
+      "title": "New commission slots are open! Half-body and full-body queues now available for Q4 2026",
+      "date": "Sep 15, 2026",
+      "category": "Commissions",
+      "url": "news/new-commission-slots-open.html",
+      "image": ""
+    },
+    {
+      "title": "Chibi Emote Pack Vol.2 is now available in the shop — 12 new expressions including rage, cry, and hype",
+      "date": "Sep 5, 2026",
+      "category": "New Release",
+      "url": "news/emote-pack-vol2-launch.html",
+      "image": ""
+    },
+    {
+      "title": "My VTuber chibi art was featured in AnimeFest 2026's official digital programme!",
+      "date": "Aug 28, 2026",
+      "category": "Featured",
+      "url": "news/fanart-feature-animefest.html",
+      "image": ""
+    },
+    {
+      "title": "Official Chibi Wibu merch store on Redbubble is now live — tees, stickers, and mugs available worldwide",
+      "date": "Aug 20, 2026",
+      "category": "Merch",
+      "url": "news/merch-redbubble-launch.html",
+      "image": ""
+    }
+  ]
+}

@@ -1,0 +1,2699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#FF6B9D" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="manifest.webmanifest" />
+
+  <!-- ═══ PRIMARY SEO ═══ -->
+  <title>VoruVoru ✨ | Custom VTuber & Anime Chibi Commissions</title>
+  <meta name="description" content="Custom chibi art commissions for VTubers, streamers & anime fans worldwide. Twitch emotes, PNG tubers, character sheets. Order from $30 USD via PayPal." />
+  <meta name="keywords" content="custom chibi art, VTuber commission, twitch emotes artist, anime chibi illustration, PNG tuber, chibi avatar commission, VTuber assets global" />
+  <link rel="canonical" href="https://voruvoru.github.io/" />
+
+  <!-- ═══ OPEN GRAPH ═══ -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://voruvoru.github.io/" />
+  <meta property="og:title"       content="VoruVoru ✨ Custom VTuber & Anime Chibi Commissions" />
+  <meta property="og:description" content="Bring your OC or VTuber to life with adorable chibi art 🌸 Open for commissions from $30 USD!" />
+  <meta property="og:image"       content="https://voruvoru.github.io/assets/og-preview.webp" />
+  <meta property="og:locale"      content="en_US" />
+  <meta property="og:site_name"   content="VoruVoru" />
+  <meta name="twitter:card"       content="summary_large_image" />
+  <meta name="twitter:site"       content="@chibiwibuart" />
+  <meta name="twitter:title"      content="VoruVoru ✨ Custom VTuber Chibi Commissions" />
+  <meta name="twitter:description"content="Custom chibi commissions from $30 🌸 VTuber assets, Twitch emotes, PNG tubers!" />
+  <meta name="twitter:image"      content="https://voruvoru.github.io/assets/og-preview.webp" />
+
+  <!-- ═══ JSON-LD ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"VoruVoru",
+    "url":"https://voruvoru.github.io",
+    "email":"rrudiawan@gmail.com",
+    "description":"Custom chibi art commissions specializing in VTuber assets, Twitch emotes, and anime illustrations.",
+    "priceRange":"$5–$210",
+    "currenciesAccepted":"USD",
+    "paymentAccepted":"PayPal",
+    "sameAs":[
+      "https://twitter.com/chibiwibuart",
+      "https://instagram.com/chibiwibuart",
+      "https://tiktok.com/@chibiwibuart"
+    ]
+  }
+  </script>
+
+  <!-- ═══ FONTS ═══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- PayPal SDK dimuat dinamis hanya setelah Live Client ID diisi pada SITE_CONFIG di bagian JavaScript. -->
+
+  <style>
+/* ══════════════════════════════════════════════════════════
+   CHIBI WIBU ART v4 — All-in-one CSS
+   Glassmorphism × Kawaii × Dynamic Blobs × Slideshow Gallery
+══════════════════════════════════════════════════════════ */
+
+/* ── TOKENS ─────────────────────────────────────────────── */
+:root {
+  --pink:      #FF6B9D;
+  --pink-hot:  #FF3D78;
+  --pink-soft: #FFB7C5;
+  --lavender:  #C9B8FF;
+  --sky:       #A1C4FD;
+  --mint:      #B5EAD7;
+  --gold:      #FFD166;
+  --peach:     #FFECD2;
+
+  --glass:        rgba(255,255,255,0.55);
+  --glass-border: rgba(255,255,255,0.78);
+  --glass-blur:   blur(16px) saturate(160%);
+  --glass-shadow: 0 8px 32px rgba(180,100,140,0.14);
+
+  --txt:       #4a3550;
+  --txt-soft:  #7a6082;
+  --txt-muted: rgba(74,53,80,0.42);
+  --white:     #ffffff;
+
+  --r-sm:  10px;  --r-md: 18px;
+  --r-lg:  26px;  --r-xl: 34px;
+  --r-pill: 999px;
+
+  --sh-card:  0 8px 30px rgba(180,100,140,0.12);
+  --sh-glow:  0 12px 40px rgba(255,107,157,0.38);
+  --sh-hover: 0 20px 50px rgba(255,107,157,0.30);
+  --ease:     cubic-bezier(.34,1.56,.64,1);
+  --t:        200ms ease;
+
+  --ff-h: 'Nunito', sans-serif;
+  --ff-b: 'Quicksand', sans-serif;
+}
+
+/* ── RESET ──────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:var(--ff-b);color:var(--txt);line-height:1.65;overflow-x:hidden;min-height:100vh;}
+img{max-width:100%;height:auto;display:block;-webkit-user-drag:none;pointer-events:none;}
+#lightbox img{pointer-events:auto;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+button{font-family:inherit;cursor:pointer;}
+
+/* ── CUSTOM SCROLLBAR ───────────────────────────────────── */
+::-webkit-scrollbar{width:10px;}
+::-webkit-scrollbar-track{background:rgba(255,183,197,0.1);}
+::-webkit-scrollbar-thumb{
+  background:linear-gradient(180deg,var(--pink) 0%,var(--lavender) 100%);
+  border-radius:var(--r-pill);
+  border:2px solid transparent;
+  background-clip:padding-box;
+}
+::-webkit-scrollbar-thumb:hover{background:var(--pink-hot);}
+
+/* ── BLOB BACKGROUND ────────────────────────────────────── */
+.bg-scene{
+  position:fixed;inset:0;z-index:-2;
+  background:linear-gradient(135deg,#fff0f7 0%,#f0eeff 40%,#e8f5ff 70%,#fff7e6 100%);
+  overflow:hidden;
+}
+.noise-overlay{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+}
+.blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;will-change:transform;}
+.blob-1{width:520px;height:520px;background:radial-gradient(circle,var(--pink-soft) 0%,transparent 70%);top:-120px;left:-80px;animation:drift1 20s linear infinite;}
+.blob-2{width:480px;height:480px;background:radial-gradient(circle,var(--lavender) 0%,transparent 70%);top:30%;right:-100px;animation:drift2 25s linear infinite;}
+.blob-3{width:400px;height:400px;background:radial-gradient(circle,var(--sky) 0%,transparent 70%);bottom:10%;left:15%;animation:drift3 18s linear infinite;}
+.blob-4{width:350px;height:350px;background:radial-gradient(circle,var(--gold) 0%,transparent 70%);bottom:30%;right:25%;animation:drift4 22s linear infinite;opacity:.35;}
+
+@keyframes drift1{0%{transform:translate(0,0) scale(1);}33%{transform:translate(60px,80px) scale(1.08);}66%{transform:translate(-40px,50px) scale(.95);}100%{transform:translate(0,0) scale(1);}}
+@keyframes drift2{0%{transform:translate(0,0) scale(1);}33%{transform:translate(-80px,-60px) scale(1.1);}66%{transform:translate(50px,40px) scale(.92);}100%{transform:translate(0,0) scale(1);}}
+@keyframes drift3{0%{transform:translate(0,0) scale(1);}50%{transform:translate(70px,-90px) scale(1.12);}100%{transform:translate(0,0) scale(1);}}
+@keyframes drift4{0%{transform:translate(0,0) scale(1);}40%{transform:translate(-60px,60px) scale(1.06);}80%{transform:translate(40px,-30px) scale(.95);}100%{transform:translate(0,0) scale(1);}}
+
+/* ── GLASS CARD ─────────────────────────────────────────── */
+.glass-card{
+  background:var(--glass);
+  backdrop-filter:var(--glass-blur);
+  -webkit-backdrop-filter:var(--glass-blur);
+  border:1.5px solid var(--glass-border);
+  box-shadow:var(--glass-shadow);
+  border-radius:var(--r-lg);
+}
+
+/* ── ACCESSIBILITY / SETUP STATE ────────────────────────── */
+.skip-link{position:fixed;left:1rem;top:-80px;z-index:10000;background:#fff;color:var(--pink-hot);padding:.7rem 1rem;border-radius:var(--r-sm);box-shadow:var(--sh-card);font-family:var(--ff-h);font-weight:800;}
+.skip-link:focus{top:1rem;}
+.setup-note{font-size:.74rem;color:var(--txt-muted);text-align:center;margin-top:.45rem;}
+.is-unconfigured{opacity:.58;filter:grayscale(.25);}
+.is-unconfigured::after{content:"Setup required";display:block;font-size:.68rem;color:var(--txt-muted);margin-top:.35rem;}
+
+/* ── LIGHTBOX ───────────────────────────────────────────── */
+#lightbox{
+  position:fixed;inset:0;z-index:9000;
+  background:rgba(30,15,40,.9);
+  backdrop-filter:blur(8px);
+  display:none;align-items:center;justify-content:center;padding:1.5rem;
+}
+#lightbox.open{display:flex;}
+#lb-close{
+  position:absolute;top:1.25rem;right:1.5rem;
+  background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.25);
+  border-radius:50%;width:42px;height:42px;
+  color:var(--white);font-size:1.4rem;line-height:1;
+  transition:background var(--t);
+}
+#lb-close:hover{background:var(--pink);border-color:var(--pink);}
+#lb-img{max-width:90vw;max-height:88vh;border-radius:var(--r-lg);box-shadow:0 20px 80px rgba(0,0,0,.5);pointer-events:auto;}
+
+/* ── TIP JAR FLOATING ───────────────────────────────────── */
+.tip-jar{
+  position:fixed;bottom:1.75rem;right:1.75rem;z-index:800;
+  display:flex;align-items:center;gap:.5rem;
+  padding:.7rem 1.25rem;
+  background:linear-gradient(135deg,var(--pink) 0%,#ff9a9e 100%);
+  border:2px solid rgba(255,255,255,.5);border-radius:var(--r-pill);
+  color:var(--white);font-family:var(--ff-h);font-weight:800;font-size:.9rem;
+  box-shadow:var(--sh-glow);text-decoration:none;
+  animation:tipBounce 2.8s var(--ease) infinite;
+}
+.tip-jar:hover{animation-play-state:paused;transform:translateY(-4px) scale(1.06);box-shadow:var(--sh-hover);}
+@keyframes tipBounce{0%,100%{transform:translateY(0);}45%{transform:translateY(-14px);}60%{transform:translateY(-10px);}75%{transform:translateY(-14px);}}
+
+/* ── NAVBAR ─────────────────────────────────────────────── */
+.glass-nav{
+  position:sticky;top:0;z-index:500;
+  background:rgba(255,255,255,.5);
+  backdrop-filter:blur(16px) saturate(180%);
+  -webkit-backdrop-filter:blur(16px) saturate(180%);
+  border-bottom:1.5px solid rgba(255,255,255,.65);
+  box-shadow:0 2px 20px rgba(255,107,157,.08);
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 clamp(1.25rem,5vw,3rem);height:64px;
+  max-width:1280px;margin:0 auto;
+}
+.nav-logo{font-family:var(--ff-h);font-weight:900;font-size:1.2rem;color:var(--pink-hot);text-shadow:0 2px 8px rgba(255,61,120,.18);}
+.nav-links{display:flex;align-items:center;gap:1.5rem;}
+.nav-links a{font-family:var(--ff-h);font-weight:700;font-size:.88rem;color:var(--txt-soft);transition:color var(--t);}
+.nav-links a:hover{color:var(--pink);}
+.nav-socials{display:flex;align-items:center;gap:.55rem;}
+.nav-socials a{color:var(--txt-soft);display:flex;align-items:center;transition:color var(--t),transform var(--t);}
+.nav-socials a:hover{color:var(--pink);transform:scale(1.2);}
+.nav-cta{
+  background:linear-gradient(135deg,var(--pink) 0%,#ff9a9e 100%) !important;
+  color:var(--white) !important;padding:.42rem 1.15rem;border-radius:var(--r-pill);
+  font-weight:800 !important;font-size:.83rem !important;
+  box-shadow:0 4px 15px rgba(255,107,157,.35);
+  transition:transform var(--t),box-shadow var(--t) !important;white-space:nowrap;
+}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:var(--sh-glow) !important;}
+.nav-burger{display:none;flex-direction:column;gap:5px;border:none;background:none;padding:4px;}
+.nav-burger span{display:block;width:24px;height:2.5px;background:var(--pink-hot);border-radius:var(--r-pill);transition:var(--t);}
+
+/* ── SCROLL REVEAL ──────────────────────────────────────── */
+.reveal{
+  opacity:0;transform:translateY(36px);
+  transition:opacity .7s ease-out calc(var(--d,0s)),transform .7s var(--ease) calc(var(--d,0s));
+  will-change:opacity,transform;
+}
+.reveal.is-visible{opacity:1;transform:none;}
+
+/* ── SECTION WRAPPERS ───────────────────────────────────── */
+.section-wrap{padding:5rem clamp(1.25rem,5vw,3rem);max-width:1200px;margin:0 auto;}
+.section-head{margin-bottom:2.5rem;text-align:center;}
+.s-label{display:block;font-family:var(--ff-h);font-size:.75rem;font-weight:800;color:var(--pink);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.45rem;}
+.s-title{font-family:var(--ff-h);font-weight:900;font-size:clamp(1.75rem,4.5vw,2.6rem);color:var(--pink-hot);text-shadow:2px 3px 10px rgba(255,61,120,.15);letter-spacing:-.01em;line-height:1.2;margin-bottom:.7rem;}
+.s-sub{color:var(--txt-soft);font-size:.97rem;line-height:1.7;max-width:500px;margin:0 auto;}
+
+/* ── HERO ───────────────────────────────────────────────── */
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:6rem 1.5rem 3rem;text-align:center;}
+.hero-glass{
+  position:relative;
+  background:rgba(255,255,255,.52);
+  backdrop-filter:blur(18px) saturate(160%);
+  -webkit-backdrop-filter:blur(18px) saturate(160%);
+  border:1.5px solid rgba(255,255,255,.8);
+  border-radius:32px;
+  box-shadow:0 12px 48px rgba(180,100,140,.18),inset 0 1px 0 rgba(255,255,255,.9);
+  padding:clamp(2.5rem,5vw,4rem) clamp(2rem,6vw,5rem);
+  max-width:680px;width:100%;
+  animation:heroEntry .9s var(--ease) both;
+}
+@keyframes heroEntry{from{opacity:0;transform:translateY(30px) scale(.97);}to{opacity:1;transform:none;}}
+
+.hero-sparkles{position:absolute;inset:0;pointer-events:none;}
+.sp{position:absolute;color:var(--pink);animation:sparkle 3s ease-in-out infinite;opacity:.6;font-size:.9rem;}
+.sp1{top:12%;left:8%;animation-delay:0s;color:var(--pink);font-size:1rem;}
+.sp2{top:20%;right:10%;animation-delay:.6s;color:var(--lavender);font-size:.75rem;}
+.sp3{bottom:18%;left:12%;animation-delay:.3s;color:var(--gold);font-size:.85rem;}
+.sp4{bottom:15%;right:8%;animation-delay:.9s;color:var(--sky);font-size:1rem;}
+.sp5{top:50%;left:3%;animation-delay:1.2s;color:var(--mint);font-size:.7rem;}
+@keyframes sparkle{0%,100%{transform:scale(1) rotate(0deg);opacity:.5;}50%{transform:scale(1.4) rotate(20deg);opacity:1;}}
+
+.hero-eyebrow{font-family:var(--ff-h);font-weight:800;font-size:.82rem;color:var(--pink-hot);background:rgba(255,107,157,.1);border:1px solid rgba(255,107,157,.25);border-radius:var(--r-pill);display:inline-block;padding:.28rem .9rem;margin-bottom:1.25rem;}
+.hero-h1{font-family:var(--ff-h);font-weight:900;font-size:clamp(2.4rem,6.5vw,4rem);line-height:1.12;letter-spacing:-.02em;color:var(--txt);margin-bottom:1rem;}
+.gradient-text{background:linear-gradient(135deg,var(--pink) 0%,var(--lavender) 50%,var(--sky) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200% 200%;animation:textShimmer 4s ease infinite;}
+@keyframes textShimmer{0%,100%{background-position:0% 50%;}50%{background-position:100% 50%;}}
+
+.hero-sub{font-size:clamp(.92rem,2.2vw,1.05rem);color:var(--txt-soft);max-width:480px;margin:0 auto 2rem;line-height:1.75;}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+
+.hero-badges{display:flex;align-items:center;justify-content:center;gap:1.5rem;margin-top:2.25rem;flex-wrap:wrap;}
+.badge{text-align:center;}
+.badge-n{font-family:var(--ff-h);font-weight:900;font-size:1.6rem;color:var(--pink);display:block;line-height:1;}
+.badge-l{font-size:.75rem;color:var(--txt-muted);display:block;margin-top:.2rem;}
+.badge-div{width:1px;height:36px;background:rgba(74,53,80,.15);flex-shrink:0;}
+
+/* ── BUTTONS ────────────────────────────────────────────── */
+.btn-glow{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--pink) 0%,#ff9a9e 100%);
+  color:var(--white);font-family:var(--ff-h);font-weight:800;font-size:.97rem;
+  padding:.82rem 2rem;border-radius:var(--r-pill);border:none;
+  box-shadow:0 5px 20px rgba(255,107,157,.4);
+  transition:transform .25s var(--ease),box-shadow .25s ease;
+  text-align:center;
+}
+.btn-glow:hover{transform:translateY(-3px) scale(1.04);box-shadow:var(--sh-hover);}
+.btn-glow.w100{width:100%;}
+
+.btn-outline{
+  display:inline-block;background:rgba(255,255,255,.6);color:var(--pink-hot);
+  font-family:var(--ff-h);font-weight:800;font-size:.97rem;
+  padding:.82rem 2rem;border-radius:var(--r-pill);
+  border:2px solid rgba(255,107,157,.35);
+  transition:background var(--t),border-color var(--t),transform .25s var(--ease);
+}
+.btn-outline:hover{background:rgba(255,255,255,.9);border-color:var(--pink);transform:translateY(-3px) scale(1.03);}
+
+/* ══════════════════════════════════════════════════════════
+   GALLERY — HORIZONTAL SLIDESHOW (Rosuuri Style)
+══════════════════════════════════════════════════════════ */
+#gallery{padding:5rem 0;}
+#gallery .section-head{padding:0 clamp(1.25rem,5vw,3rem);}
+
+/* Slideshow track wrapper — full viewport width */
+.slideshow-outer{
+  position:relative;
+  width:100%;
+  padding:1.5rem 0 2rem;
+}
+
+/* Navigation arrows */
+.slide-arrow{
+  position:absolute;top:50%;z-index:10;
+  transform:translateY(-50%);
+  background:var(--glass);
+  backdrop-filter:var(--glass-blur);
+  border:1.5px solid var(--glass-border);
+  border-radius:50%;
+  width:48px;height:48px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.25rem;color:var(--pink-hot);
+  box-shadow:var(--sh-card);
+  cursor:pointer;
+  transition:background var(--t),box-shadow var(--t),transform var(--t);
+  user-select:none;
+}
+.slide-arrow:hover{background:var(--pink);color:var(--white);box-shadow:var(--sh-glow);transform:translateY(-50%) scale(1.08);}
+.slide-arrow.prev{left:clamp(.75rem,2vw,2rem);}
+.slide-arrow.next{right:clamp(.75rem,2vw,2rem);}
+
+/* The scrolling track */
+.gallery-slider{
+  display:flex;
+  gap:clamp(.75rem,2vw,1.25rem);
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  padding:0 clamp(3rem,8vw,6rem);
+  padding-bottom:1rem;
+  /* hide native scrollbar — use arrows instead */
+  scrollbar-width:none;
+}
+.gallery-slider::-webkit-scrollbar{display:none;}
+
+/* Each slide card */
+.slide-card{
+  flex:0 0 auto;
+  width:clamp(280px,40vw,420px);
+  height:clamp(340px,50vw,520px);
+  scroll-snap-align:center;
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  position:relative;
+  cursor:zoom-in;
+  box-shadow:var(--sh-card);
+  border:1.5px solid var(--glass-border);
+  transition:transform .4s var(--ease),box-shadow .4s ease;
+}
+.slide-card:hover{transform:scale(1.03) translateY(-6px);box-shadow:var(--sh-hover);}
+
+.slide-card img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .5s ease;
+  pointer-events:none;
+}
+.slide-card:hover img{transform:scale(1.07);}
+
+/* Caption overlay */
+.slide-caption{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(to top,rgba(255,61,120,.75) 0%,transparent 60%);
+  padding:1.5rem 1rem .85rem;
+  opacity:0;transform:translateY(8px);
+  transition:opacity var(--t),transform var(--t);
+}
+.slide-card:hover .slide-caption{opacity:1;transform:none;}
+.slide-caption span{
+  font-family:var(--ff-h);font-size:.8rem;font-weight:800;
+  background:var(--white);color:var(--pink-hot);
+  padding:.2rem .7rem;border-radius:var(--r-pill);
+}
+
+/* Dot indicators */
+.slide-dots{
+  display:flex;justify-content:center;gap:.5rem;margin-top:1.25rem;
+}
+.dot{
+  width:8px;height:8px;border-radius:50%;
+  background:rgba(255,107,157,.25);
+  cursor:pointer;transition:background var(--t),transform var(--t),width var(--t);
+}
+.dot.active{background:var(--pink);width:24px;border-radius:var(--r-pill);transform:none;}
+
+/* Placeholder art cards */
+.art-placeholder{
+  width:100%;height:100%;
+  background:linear-gradient(135deg,rgba(255,183,197,.25) 0%,rgba(201,184,255,.2) 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:.5rem;font-size:2rem;color:rgba(255,107,157,.4);
+  font-family:var(--ff-h);font-size:1rem;text-align:center;
+  pointer-events:none;
+}
+.art-placeholder .art-emoji{font-size:3rem;display:block;margin-bottom:.5rem;}
+
+/* ══════════════════════════════════════════════════════════
+   ARTICLES / SEO SECTION
+══════════════════════════════════════════════════════════ */
+#articles{background:transparent;}
+
+.article-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(290px,1fr));
+  gap:1.5rem;
+}
+
+.article-card{
+  border-radius:var(--r-lg);overflow:hidden;
+  transition:transform .4s var(--ease),box-shadow .4s ease;
+  text-decoration:none;color:inherit;display:flex;flex-direction:column;
+}
+.article-card:hover{transform:translateY(-8px);box-shadow:var(--sh-hover);}
+
+/* Article image area */
+.article-thumb{
+  width:100%;aspect-ratio:16/9;object-fit:cover;display:block;
+  transition:transform .5s ease;
+}
+.article-card:hover .article-thumb{transform:scale(1.05);}
+
+/* Placeholder for article images */
+.article-thumb-placeholder{
+  width:100%;aspect-ratio:16/9;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:.35rem;font-family:var(--ff-h);
+  color:rgba(255,107,157,.4);font-size:.9rem;
+}
+.article-thumb-placeholder .atp-emoji{font-size:2.5rem;display:block;}
+
+.article-body{padding:1.25rem 1.5rem 1.5rem;flex:1;display:flex;flex-direction:column;gap:.6rem;}
+
+/* Tag row — multiple tags supported */
+.tag-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+.a-tag{
+  font-family:var(--ff-h);font-size:.72rem;font-weight:800;
+  padding:.2rem .65rem;border-radius:var(--r-pill);
+  border:1.5px solid;
+}
+.a-tag.geo  {background:rgba(161,196,253,.15);border-color:rgba(161,196,253,.5);color:#4d80c9;}
+.a-tag.cat  {background:rgba(201,184,255,.15);border-color:rgba(201,184,255,.5);color:#7b5ea7;}
+.a-tag.tip  {background:rgba(181,234,215,.15);border-color:rgba(181,234,215,.5);color:#2d8a62;}
+.a-tag.news {background:rgba(255,209,102,.15);border-color:rgba(255,209,102,.5);color:#9a6800;}
+
+.article-title{
+  font-family:var(--ff-h);font-weight:800;font-size:1.05rem;
+  color:var(--pink-hot);line-height:1.35;
+}
+
+.article-excerpt{
+  font-size:.85rem;color:var(--txt-soft);line-height:1.65;flex:1;
+}
+
+.article-read-more{
+  font-family:var(--ff-h);font-weight:800;font-size:.83rem;
+  color:var(--pink);display:inline-flex;align-items:center;gap:.3rem;
+  transition:gap var(--t),color var(--t);width:fit-content;
+}
+.article-card:hover .article-read-more{gap:.6rem;color:var(--pink-hot);}
+
+/* ══════════════════════════════════════════════════════════
+   COMMISSIONS / PRICING
+══════════════════════════════════════════════════════════ */
+.tos-glass{
+  background:rgba(255,240,245,.72);
+  backdrop-filter:blur(10px);
+  border:1.5px solid rgba(255,107,157,.3);
+  border-left:5px solid var(--pink);
+  border-radius:0 var(--r-md) var(--r-md) 0;
+  padding:1.2rem 1.5rem;
+  margin-bottom:2.5rem;
+  display:flex;gap:1rem;align-items:flex-start;
+  font-size:.9rem;color:var(--txt-soft);line-height:1.65;
+}
+.tos-icon{font-size:1.6rem;flex-shrink:0;}
+.tos-glass strong{color:var(--pink-hot);}
+.tos-link{color:var(--pink);font-weight:700;margin-left:.4rem;}
+
+.pricing-row{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.5rem;max-width:1000px;margin:0 auto;
+}
+
+.price-card{
+  padding:2rem 1.75rem;position:relative;
+  transition:transform .4s var(--ease),box-shadow .4s ease;
+}
+.price-card:hover{transform:translateY(-10px);box-shadow:var(--sh-hover);}
+.price-card.featured{border-color:rgba(255,107,157,.5);background:rgba(255,235,245,.68);}
+
+.pc-ribbon{
+  position:absolute;top:-1px;right:1.5rem;
+  background:linear-gradient(135deg,var(--pink),#ff9a9e);
+  color:var(--white);font-family:var(--ff-h);font-size:.72rem;font-weight:800;
+  padding:.28rem .75rem;border-radius:0 0 var(--r-sm) var(--r-sm);
+}
+.pc-icon{font-size:2rem;margin-bottom:.7rem;}
+.pc-name{font-family:var(--ff-h);font-weight:900;font-size:1.2rem;color:var(--txt);margin-bottom:.3rem;}
+.pc-desc{font-size:.84rem;color:var(--txt-soft);margin-bottom:1.1rem;line-height:1.5;}
+.pc-price{font-family:var(--ff-h);font-weight:900;font-size:2.2rem;color:var(--pink-hot);margin-bottom:.15rem;}
+.pc-price span{font-size:.9rem;color:var(--txt-muted);margin-left:.2rem;}
+.pc-days{font-size:.78rem;color:var(--txt-muted);margin-bottom:1.2rem;}
+.pc-feats{list-style:none;display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.35rem;}
+.pc-feats li{display:flex;align-items:center;gap:.5rem;font-size:.84rem;color:var(--txt-soft);}
+.pc-feats li::before{content:"✓";color:var(--pink);font-weight:900;flex-shrink:0;}
+
+.paypal-wrap{margin-bottom:.6rem;min-height:44px;}
+
+.btn-altorder{width:100%;background:none;border:none;font-size:.76rem;color:var(--txt-muted);padding:.25rem 0;transition:color var(--t);}
+.btn-altorder:hover{color:var(--pink);}
+
+.license-note{
+  max-width:1000px;margin:2rem auto 0;
+  background:rgba(255,209,102,.12);
+  border:1.5px solid rgba(255,209,102,.38);
+  border-radius:var(--r-md);
+  padding:1rem 1.5rem;
+  font-size:.88rem;color:var(--txt-soft);line-height:1.65;
+}
+.license-note a{color:var(--pink);font-weight:700;margin-left:.3rem;}
+
+/* ── ORDER FORM ─────────────────────────────────────────── */
+.order-wrap{
+  display:grid;grid-template-columns:1fr 1.1fr;
+  gap:3rem;max-width:900px;margin:3rem auto 0;align-items:start;
+}
+.order-info-title{font-family:var(--ff-h);font-weight:900;font-size:1.15rem;color:var(--pink-hot);margin-bottom:1.25rem;}
+.info-block{margin-bottom:1.4rem;}
+.info-block h4{font-family:var(--ff-h);font-weight:800;font-size:.92rem;color:var(--pink-hot);margin-bottom:.3rem;}
+.info-block p{font-size:.86rem;color:var(--txt-soft);line-height:1.65;}
+
+.order-form{padding:2rem;}
+.form-title{font-family:var(--ff-h);font-weight:900;font-size:1.1rem;color:var(--pink-hot);margin-bottom:1.1rem;}
+.fg{display:flex;flex-direction:column;gap:.28rem;margin-bottom:.85rem;}
+.fl{font-family:var(--ff-h);font-size:.8rem;font-weight:700;color:var(--txt-soft);}
+.fc{
+  width:100%;background:rgba(255,255,255,.65);
+  border:1.5px solid rgba(255,183,197,.4);border-radius:var(--r-sm);
+  padding:.65rem 1rem;color:var(--txt);font-family:var(--ff-b);font-size:.9rem;
+  transition:border-color var(--t),background var(--t),box-shadow var(--t);
+}
+.fc:focus{outline:none;border-color:var(--pink);background:rgba(255,240,245,.7);box-shadow:0 0 0 3px rgba(255,107,157,.12);}
+.fc::placeholder{color:rgba(74,53,80,.28);}
+textarea.fc{resize:vertical;min-height:100px;}
+select.fc option{background:#fff5f8;}
+.ffile{cursor:pointer;padding:.5rem .85rem;color:var(--txt-soft);}
+.fhint{font-size:.72rem;color:var(--txt-muted);}
+.fstatus{font-size:.85rem;text-align:center;min-height:1.4em;color:var(--txt-soft);margin-top:.5rem;}
+.fstatus.ok{color:#22c55e;font-weight:700;}
+.fstatus.err{color:#ef4444;font-weight:700;}
+
+/* ── DIGITAL SHOP ───────────────────────────────────────── */
+.shop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1.25rem;margin-bottom:2rem;}
+.shop-card{overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s ease;}
+.shop-card:hover{transform:translateY(-6px) scale(1.02);box-shadow:var(--sh-hover);}
+.sc-thumb{aspect-ratio:1;background:linear-gradient(135deg,rgba(255,183,197,.22),rgba(201,184,255,.18));display:flex;align-items:center;justify-content:center;font-size:2.75rem;}
+.sc-body{padding:1rem;}
+.sc-name{font-family:var(--ff-h);font-weight:800;font-size:.95rem;color:var(--txt);margin-bottom:.28rem;}
+.sc-meta{font-size:.76rem;color:var(--txt-muted);margin-bottom:.65rem;}
+.sc-price{font-family:var(--ff-h);font-weight:900;font-size:1.15rem;color:var(--pink);margin-bottom:.55rem;}
+
+/* PoD Banner */
+.pod-banner{padding:2rem 2.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;}
+.pod-emoji{font-size:3rem;flex-shrink:0;}
+.pod-text{flex:1;min-width:200px;}
+.pod-text h3{font-family:var(--ff-h);font-weight:900;font-size:1.3rem;color:var(--txt);margin-bottom:.35rem;}
+.pod-text p{font-size:.9rem;color:var(--txt-soft);line-height:1.6;}
+
+/* ── TOOLS ──────────────────────────────────────────────── */
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1.25rem;}
+.tool-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.5rem;padding:1.5rem 1.25rem;transition:transform .35s var(--ease),box-shadow .35s ease;text-decoration:none;}
+.tool-card:hover{transform:translateY(-6px);box-shadow:var(--sh-hover);}
+.tc-icon{font-size:2.25rem;}
+.tc-name{font-family:var(--ff-h);font-weight:800;font-size:.95rem;color:var(--txt);line-height:1.3;}
+.tc-desc{font-size:.78rem;color:var(--txt-soft);line-height:1.5;}
+.tc-badge{font-family:var(--ff-h);font-weight:800;font-size:.72rem;background:rgba(255,107,157,.12);color:var(--pink-hot);padding:.2rem .65rem;border-radius:var(--r-pill);margin-top:.25rem;}
+
+/* ── SUPPORT ────────────────────────────────────────────── */
+.support-row{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;}
+.sup-btn{padding:.75rem 1.35rem;font-family:var(--ff-h);font-weight:700;font-size:.88rem;color:var(--txt-soft);border-radius:var(--r-md);transition:transform .3s var(--ease),box-shadow .3s ease,color var(--t);text-decoration:none;}
+.sup-btn:hover{transform:translateY(-4px);box-shadow:var(--sh-hover);color:var(--pink-hot);}
+
+/* ── AD SLOT ────────────────────────────────────────────── */
+.ad-slot{background:rgba(255,255,255,.3);border:1px dashed rgba(255,107,157,.2);border-radius:var(--r-sm);height:90px;display:flex;align-items:center;justify-content:center;font-size:.74rem;color:var(--txt-muted);font-family:var(--ff-h);max-width:728px;margin:2rem auto 0;}
+
+/* ── FOOTER ─────────────────────────────────────────────── */
+.site-footer{margin:3rem 1.25rem 1.25rem;border-radius:var(--r-xl);padding:3rem clamp(1.5rem,4vw,3rem) 1.5rem;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2.5rem;max-width:1100px;margin:0 auto 2rem;}
+.f-logo{font-family:var(--ff-h);font-weight:900;font-size:1.1rem;color:var(--pink-hot);margin-bottom:.55rem;}
+.f-desc{font-size:.84rem;color:var(--txt-soft);line-height:1.65;max-width:280px;}
+.f-socials{display:flex;gap:.5rem;margin-top:.85rem;flex-wrap:wrap;}
+.f-social-btn{background:rgba(255,107,157,.08);border:1.5px solid rgba(255,107,157,.2);border-radius:var(--r-sm);padding:.35rem .65rem;font-size:.78rem;color:var(--txt-soft);font-family:var(--ff-h);font-weight:700;transition:background var(--t),color var(--t),border-color var(--t);}
+.f-social-btn:hover{background:var(--pink);color:var(--white);border-color:var(--pink);}
+.f-col-title{font-family:var(--ff-h);font-weight:800;font-size:.88rem;color:var(--txt-soft);margin-bottom:.85rem;}
+.f-links{display:flex;flex-direction:column;gap:.48rem;}
+.f-links a{font-size:.85rem;color:var(--txt-muted);transition:color var(--t);}
+.f-links a:hover{color:var(--pink);}
+.f-bottom{border-top:1.5px solid rgba(255,107,157,.12);padding-top:1.25rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-size:.75rem;color:var(--txt-muted);max-width:1100px;margin:0 auto;}
+
+/* ══════════════════════════════════════════════════════════
+   AFFILIATE SECTION
+══════════════════════════════════════════════════════════ */
+
+/* ── Disclosure bar ──────────────────────────────────────── */
+.aff-disclosure{
+  background:rgba(255,209,102,.12);
+  border:1.5px solid rgba(255,209,102,.35);
+  border-radius:var(--r-md);
+  padding:.75rem 1.25rem;
+  font-size:.8rem;color:var(--txt-soft);line-height:1.55;
+  display:flex;align-items:center;gap:.65rem;
+  margin-bottom:2.5rem;
+}
+.aff-disclosure-icon{font-size:1.15rem;flex-shrink:0;}
+.aff-disclosure a{color:var(--pink);font-weight:700;}
+
+/* ── Category tabs ───────────────────────────────────────── */
+.aff-tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem;justify-content:center;}
+.aff-tab{
+  background:rgba(255,255,255,.55);
+  backdrop-filter:blur(8px);
+  border:1.5px solid rgba(255,255,255,.7);
+  color:var(--txt-soft);
+  font-family:var(--ff-h);font-weight:700;font-size:.82rem;
+  padding:.38rem .95rem;border-radius:var(--r-pill);
+  cursor:pointer;
+  transition:background var(--t),border-color var(--t),color var(--t),transform var(--t);
+}
+.aff-tab:hover,.aff-tab.active{
+  background:var(--pink);border-color:var(--pink);color:var(--white);
+  transform:translateY(-1px);box-shadow:0 4px 14px rgba(255,107,157,.35);
+}
+
+/* ── Main affiliate grid ─────────────────────────────────── */
+.aff-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+  gap:1.25rem;
+  margin-bottom:2.5rem;
+}
+
+/* ── Single affiliate card ───────────────────────────────── */
+.aff-card{
+  position:relative;
+  display:flex;flex-direction:column;
+  border-radius:var(--r-lg);overflow:hidden;
+  text-decoration:none;color:inherit;
+  transition:transform .4s var(--ease),box-shadow .4s ease;
+}
+.aff-card:hover{transform:translateY(-8px) scale(1.02);box-shadow:var(--sh-hover);}
+
+/* ACTIVE card (affiliate link ready) */
+.aff-card.active-card{}
+/* PLACEHOLDER card (slot belum diisi) */
+.aff-card.empty-card{opacity:.55;pointer-events:none;filter:grayscale(.4);}
+.aff-card.empty-card:hover{transform:none;box-shadow:var(--glass-shadow);}
+
+/* Card header — coloured strip */
+.aff-card-header{
+  padding:1.5rem 1.5rem 1rem;
+  display:flex;align-items:center;gap:1rem;
+}
+.aff-logo{
+  width:52px;height:52px;border-radius:var(--r-md);
+  background:rgba(255,255,255,.7);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.75rem;flex-shrink:0;
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+.aff-header-text{}
+.aff-partner{
+  font-family:var(--ff-h);font-weight:900;font-size:1rem;
+  color:var(--txt);line-height:1.2;
+}
+.aff-category-pill{
+  font-size:.7rem;font-weight:800;font-family:var(--ff-h);
+  padding:.15rem .55rem;border-radius:var(--r-pill);
+  display:inline-block;margin-top:.25rem;
+}
+/* category pill colour variants */
+.pill-art     {background:rgba(255,107,157,.12);color:var(--pink-hot);}
+.pill-tech    {background:rgba(161,196,253,.2);color:#3b6fb5;}
+.pill-learn   {background:rgba(201,184,255,.2);color:#7b5ea7;}
+.pill-shop    {background:rgba(255,209,102,.2);color:#9a6800;}
+.pill-merch   {background:rgba(181,234,215,.2);color:#2d8a62;}
+.pill-stream  {background:rgba(255,183,197,.2);color:#c0507d;}
+
+/* Card body */
+.aff-card-body{
+  padding:.75rem 1.5rem 1.5rem;
+  flex:1;display:flex;flex-direction:column;gap:.5rem;
+}
+.aff-desc{font-size:.84rem;color:var(--txt-soft);line-height:1.6;flex:1;}
+.aff-commission{
+  font-family:var(--ff-h);font-weight:800;font-size:.8rem;
+  color:var(--pink);
+}
+.aff-commission.tbd{color:var(--txt-muted);font-style:italic;font-weight:600;}
+
+/* Card footer */
+.aff-card-foot{
+  padding:.85rem 1.5rem;
+  border-top:1.5px solid rgba(255,255,255,.5);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.aff-status{
+  font-family:var(--ff-h);font-size:.74rem;font-weight:800;
+  display:inline-flex;align-items:center;gap:.35rem;
+  padding:.2rem .6rem;border-radius:var(--r-pill);
+}
+.aff-status.live  {background:rgba(34,197,94,.12);color:#15803d;}
+.aff-status.soon  {background:rgba(255,209,102,.18);color:#9a6800;}
+.aff-status.open  {background:rgba(161,196,253,.18);color:#3b6fb5;}
+.aff-cta{
+  font-family:var(--ff-h);font-weight:800;font-size:.78rem;
+  color:var(--pink-hot);
+  display:inline-flex;align-items:center;gap:.3rem;
+  transition:gap var(--t),color var(--t);
+}
+.aff-card:hover .aff-cta{gap:.6rem;color:var(--pink);}
+.aff-cta.disabled{color:var(--txt-muted);pointer-events:none;}
+
+/* "Coming soon" ribbon on empty slots */
+.aff-ribbon{
+  position:absolute;top:12px;right:-26px;
+  background:var(--gold);color:#6b4800;
+  font-family:var(--ff-h);font-size:.65rem;font-weight:900;
+  padding:.25rem 2.2rem;
+  transform:rotate(45deg);
+  letter-spacing:.06em;
+  box-shadow:0 2px 8px rgba(0,0,0,.12);
+}
+
+/* ── Featured / Hero affiliate banner ────────────────────── */
+.aff-hero{
+  border-radius:var(--r-xl);overflow:hidden;
+  display:flex;align-items:center;gap:2rem;flex-wrap:wrap;
+  padding:2rem 2.5rem;
+  margin-bottom:2rem;
+  position:relative;
+}
+.aff-hero-badge{
+  position:absolute;top:1rem;right:1.25rem;
+  background:var(--pink);color:var(--white);
+  font-family:var(--ff-h);font-size:.7rem;font-weight:800;
+  padding:.22rem .65rem;border-radius:var(--r-pill);
+}
+.aff-hero-logo{font-size:3.5rem;flex-shrink:0;}
+.aff-hero-body{flex:1;min-width:200px;}
+.aff-hero-body h3{
+  font-family:var(--ff-h);font-weight:900;font-size:1.25rem;
+  color:var(--txt);margin-bottom:.35rem;
+}
+.aff-hero-body p{font-size:.9rem;color:var(--txt-soft);line-height:1.6;margin-bottom:.35rem;}
+.aff-hero-comm{font-family:var(--ff-h);font-weight:800;font-size:.84rem;color:var(--pink);}
+
+/* ── Inline text affiliate strip (inside order form sidebar) ─ */
+.aff-inline-strip{
+  border-top:1.5px solid rgba(255,183,197,.25);
+  padding-top:1.25rem;margin-top:.5rem;
+}
+.aff-inline-label{
+  font-family:var(--ff-h);font-size:.72rem;font-weight:800;
+  color:var(--txt-muted);letter-spacing:.07em;text-transform:uppercase;
+  margin-bottom:.65rem;
+}
+.aff-inline-card{
+  display:flex;align-items:center;gap:.65rem;
+  background:rgba(255,255,255,.45);
+  backdrop-filter:blur(8px);
+  border:1.5px solid rgba(255,183,197,.25);
+  border-radius:var(--r-sm);
+  padding:.6rem .9rem;margin-bottom:.45rem;
+  font-family:var(--ff-h);font-weight:700;font-size:.83rem;
+  color:var(--txt-soft);
+  transition:border-color var(--t),color var(--t),background var(--t);
+  text-decoration:none;
+}
+.aff-inline-card:hover{border-color:var(--pink);color:var(--pink-hot);background:rgba(255,240,245,.6);}
+.aff-inline-card.disabled{pointer-events:none;opacity:.45;}
+.aff-inline-card .aic-icon{font-size:1.15rem;flex-shrink:0;}
+.aff-inline-card .aic-text{flex:1;}
+.aff-inline-card .aic-badge{
+  font-size:.68rem;font-weight:800;
+  background:rgba(255,107,157,.1);color:var(--pink-hot);
+  padding:.15rem .5rem;border-radius:var(--r-pill);white-space:nowrap;
+}
+.aff-inline-card.disabled .aic-badge{background:rgba(74,53,80,.07);color:var(--txt-muted);}
+
+/* ── Footer affiliate bar ────────────────────────────────── */
+.aff-footer-bar{
+  border-top:1.5px solid rgba(255,107,157,.1);
+  padding-top:1.5rem;margin-top:1.5rem;
+}
+.aff-footer-label{
+  font-family:var(--ff-h);font-size:.72rem;font-weight:800;
+  color:rgba(255,183,197,.5);letter-spacing:.07em;text-transform:uppercase;
+  margin-bottom:.7rem;
+}
+.aff-footer-links{display:flex;flex-wrap:wrap;gap:.5rem;}
+.aff-footer-link{
+  font-family:var(--ff-h);font-size:.78rem;font-weight:700;
+  color:rgba(255,183,197,.45);
+  border:1px solid rgba(255,183,197,.15);
+  border-radius:var(--r-pill);padding:.25rem .7rem;
+  transition:color var(--t),border-color var(--t),background var(--t);
+  text-decoration:none;
+}
+.aff-footer-link:hover{color:var(--pink-soft);border-color:rgba(255,183,197,.4);background:rgba(255,183,197,.08);}
+.aff-footer-link.disabled{pointer-events:none;opacity:.35;}
+
+/* ══════════════════════════════════════════════════════════
+   NEWS SECTION  — Rosuuri style
+   · Cream/light background, no glass on cards (clean editorial)
+   · 4-col photo grid, date small, title below, load-more "..."
+══════════════════════════════════════════════════════════ */
+
+/* wrapper bg — warm cream like Rosuuri */
+#news{
+  background: linear-gradient(180deg,rgba(255,250,248,0) 0%,rgba(255,248,244,.85) 30%,rgba(255,248,244,.85) 70%,rgba(255,250,248,0) 100%);
+  padding:5rem clamp(1.25rem,5vw,3rem);
+}
+
+.news-inner{max-width:1200px;margin:0 auto;}
+
+/* header — "News" italic serif label (top-right like Rosuuri) */
+.news-head{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  margin-bottom:2.25rem;
+  flex-wrap:wrap;gap:1rem;
+}
+.news-wordmark{
+  font-family:'Georgia','Times New Roman',serif;
+  font-style:italic;
+  font-size:clamp(2.5rem,6vw,4.5rem);
+  font-weight:900;
+  color:var(--gold);
+  line-height:1;
+  letter-spacing:-.02em;
+  /* subtle drop shadow for the gold script look */
+  text-shadow:2px 4px 12px rgba(180,130,0,.18);
+  align-self:flex-end;
+}
+.news-label-sub{
+  font-family:var(--ff-h);font-size:.76rem;font-weight:800;
+  color:var(--pink);letter-spacing:.1em;text-transform:uppercase;
+  margin-bottom:.4rem;display:block;
+}
+.news-head-left{display:flex;flex-direction:column;justify-content:flex-end;}
+
+/* 4-column photo grid */
+.news-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:clamp(.75rem,2vw,1.25rem);
+  margin-bottom:2rem;
+}
+
+/* single news card — no explicit glass; just clean white hover */
+.news-card{
+  display:flex;flex-direction:column;gap:0;
+  text-decoration:none;color:inherit;
+  cursor:pointer;
+}
+.news-card:hover .news-img-wrap img{ transform:scale(1.06); }
+.news-card:hover .news-title{ color:var(--pink-hot); }
+
+/* image box — fixed aspect, clip overflow */
+.news-img-wrap{
+  width:100%;
+  aspect-ratio:4/3;
+  border-radius:var(--r-md);
+  overflow:hidden;
+  background:linear-gradient(135deg,rgba(255,183,197,.2),rgba(201,184,255,.15));
+  margin-bottom:.75rem;
+  position:relative;
+  box-shadow:0 4px 16px rgba(74,53,80,.1);
+}
+.news-img-wrap img{
+  width:100%;height:100%;object-fit:cover;
+  display:block;
+  transition:transform .5s ease;
+  pointer-events:none;
+}
+
+/* placeholder art inside image box */
+.news-img-ph{
+  width:100%;height:100%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:.4rem;
+  font-family:var(--ff-h);color:rgba(255,107,157,.35);font-size:.82rem;
+  text-align:center;padding:.5rem;
+}
+.news-img-ph .ph-emoji{font-size:2.2rem;display:block;}
+
+/* category chip on image */
+.news-chip{
+  position:absolute;top:.6rem;left:.6rem;
+  font-family:var(--ff-h);font-size:.66rem;font-weight:800;
+  background:rgba(255,255,255,.82);
+  backdrop-filter:blur(6px);
+  color:var(--pink-hot);
+  padding:.18rem .55rem;border-radius:var(--r-pill);
+  border:1px solid rgba(255,107,157,.2);
+}
+
+/* date */
+.news-date{
+  font-family:var(--ff-h);font-size:.72rem;font-weight:600;
+  color:var(--txt-muted);margin-bottom:.3rem;
+  letter-spacing:.02em;
+}
+
+/* title */
+.news-title{
+  font-family:var(--ff-h);font-weight:800;
+  font-size:clamp(.82rem,1.4vw,.95rem);
+  color:var(--txt);line-height:1.45;
+  transition:color var(--t);
+}
+
+/* hidden cards for "load more" */
+.news-card.hidden-news{display:none;}
+.news-card.hidden-news.shown{display:flex;}
+
+/* "..." load more button — circle style like Rosuuri */
+.news-more-wrap{display:flex;justify-content:flex-end;margin-top:.5rem;}
+.news-more-btn{
+  width:48px;height:48px;
+  border-radius:50%;
+  background:rgba(255,255,255,.65);
+  backdrop-filter:blur(8px);
+  border:1.5px solid rgba(255,107,157,.3);
+  color:var(--pink-hot);
+  font-size:1.1rem;font-weight:900;letter-spacing:.1em;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;
+  transition:background var(--t),box-shadow var(--t),transform var(--t),border-color var(--t);
+  box-shadow:0 4px 14px rgba(255,107,157,.15);
+}
+.news-more-btn:hover{
+  background:var(--pink);color:var(--white);border-color:var(--pink);
+  box-shadow:var(--sh-glow);transform:scale(1.1);
+}
+.news-more-btn.all-shown{ opacity:.35; pointer-events:none; }
+
+/* responsive */
+@media(max-width:900px){ .news-grid{grid-template-columns:repeat(2,1fr);} }
+@media(max-width:480px){
+  .news-grid{grid-template-columns:1fr 1fr;}
+  .news-wordmark{font-size:2.2rem;}
+  .news-title{font-size:.82rem;}
+}
+
+/* ── WHATSAPP INPUT ──────────────────────────────────────── */
+.fl-hint{
+  display:block;font-weight:600;font-size:.72rem;
+  color:var(--txt-muted);margin-top:.15rem;
+}
+.wa-input-wrap{
+  display:flex;align-items:center;
+  background:rgba(255,255,255,.65);
+  border:1.5px solid rgba(37,211,102,.35);
+  border-radius:var(--r-sm);
+  overflow:hidden;
+  transition:border-color var(--t),box-shadow var(--t);
+}
+.wa-input-wrap:focus-within{
+  border-color:#25D366;
+  box-shadow:0 0 0 3px rgba(37,211,102,.14);
+}
+.wa-prefix{
+  display:flex;align-items:center;gap:.3rem;
+  padding:.65rem .85rem;
+  background:rgba(37,211,102,.08);
+  border-right:1.5px solid rgba(37,211,102,.2);
+  color:#128C7E;font-family:var(--ff-h);font-weight:800;font-size:.88rem;
+  flex-shrink:0;white-space:nowrap;
+}
+.wa-fc{
+  border:none !important;border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  flex:1;
+}
+.wa-fc:focus{ outline:none;box-shadow:none !important; }
+
+/* ══════════════════════════════════════════════════════════
+   PARTNER SPOTLIGHT — 3 slot sebelum News
+   Clean horizontal strip, company-logo-first style
+══════════════════════════════════════════════════════════ */
+#partner-spotlight{
+  padding: 3.5rem clamp(1.25rem,5vw,3rem);
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0)     0%,
+    rgba(255,245,250,.6)   15%,
+    rgba(255,245,250,.6)   85%,
+    rgba(255,255,255,0)   100%);
+}
+.ps-inner{ max-width:1100px; margin:0 auto; }
+
+.ps-label{
+  display:block;
+  font-family:var(--ff-h); font-size:.72rem; font-weight:800;
+  color:var(--txt-muted); letter-spacing:.12em; text-transform:uppercase;
+  text-align:center; margin-bottom:1.5rem;
+}
+
+/* 3-column grid — equal width */
+.ps-grid{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:1.25rem;
+}
+
+/* Single partner card */
+.ps-card{
+  position:relative;
+  display:flex; flex-direction:column;
+  align-items:center; text-align:center;
+  gap:.75rem;
+  padding:2rem 1.5rem 1.5rem;
+  border-radius:var(--r-lg);
+  text-decoration:none; color:inherit;
+  transition:transform .35s var(--ease), box-shadow .35s ease;
+  overflow:hidden;
+}
+.ps-card:hover{
+  transform:translateY(-6px) scale(1.02);
+  box-shadow:var(--sh-hover);
+}
+
+/* LIVE card (link aktif) */
+.ps-card.live{}
+
+/* EMPTY slot (belum ada partner) */
+.ps-card.empty{
+  pointer-events:none;
+  border: 2px dashed rgba(255,107,157,.2) !important;
+  background: rgba(255,255,255,.3) !important;
+  backdrop-filter: blur(8px);
+  box-shadow: none !important;
+}
+.ps-card.empty:hover{ transform:none; }
+
+/* "Slot Open" watermark on empty cards */
+.ps-slot-label{
+  font-family:var(--ff-h); font-size:.7rem; font-weight:800;
+  color:rgba(255,107,157,.35); letter-spacing:.08em; text-transform:uppercase;
+  border:1.5px dashed rgba(255,107,157,.25);
+  border-radius:var(--r-pill); padding:.22rem .7rem;
+  margin-bottom:.25rem;
+}
+
+/* Logo area */
+.ps-logo-wrap{
+  width:72px; height:72px;
+  border-radius:var(--r-md);
+  background:rgba(255,255,255,.8);
+  box-shadow:0 4px 16px rgba(74,53,80,.1);
+  display:flex; align-items:center; justify-content:center;
+  font-size:2rem;
+  transition:transform .3s ease;
+}
+.ps-card:hover .ps-logo-wrap{ transform:scale(1.08); }
+.ps-logo-wrap img{
+  width:52px; height:52px; object-fit:contain;
+  pointer-events:none;
+}
+
+/* "Sponsored" badge — top-right corner */
+.ps-badge{
+  position:absolute; top:.65rem; right:.75rem;
+  font-family:var(--ff-h); font-size:.62rem; font-weight:800;
+  color:rgba(74,53,80,.4);
+  background:rgba(255,255,255,.55);
+  backdrop-filter:blur(6px);
+  border:1px solid rgba(74,53,80,.1);
+  border-radius:var(--r-pill); padding:.15rem .55rem;
+  letter-spacing:.04em;
+}
+
+/* Partner name */
+.ps-name{
+  font-family:var(--ff-h); font-weight:900; font-size:1rem;
+  color:var(--txt); line-height:1.25;
+}
+.ps-card.empty .ps-name{ color:var(--txt-muted); }
+
+/* Tagline */
+.ps-tagline{
+  font-size:.82rem; color:var(--txt-soft); line-height:1.55;
+  flex:1;
+}
+.ps-card.empty .ps-tagline{ color:rgba(74,53,80,.3); font-style:italic; }
+
+/* CTA pill at bottom */
+.ps-cta{
+  font-family:var(--ff-h); font-weight:800; font-size:.78rem;
+  color:var(--pink-hot);
+  background:rgba(255,107,157,.1);
+  border:1.5px solid rgba(255,107,157,.25);
+  border-radius:var(--r-pill); padding:.3rem .85rem;
+  transition:background var(--t), color var(--t), border-color var(--t);
+  white-space:nowrap;
+}
+.ps-card:hover .ps-cta{
+  background:var(--pink); color:var(--white); border-color:var(--pink);
+}
+.ps-card.empty .ps-cta{
+  color:rgba(255,107,157,.3); border-color:rgba(255,107,157,.15);
+  background:transparent;
+}
+
+/* Contact nudge below grid */
+.ps-contact{
+  text-align:center; margin-top:1.25rem;
+  font-size:.8rem; color:var(--txt-muted); font-family:var(--ff-h);
+}
+.ps-contact a{
+  color:var(--pink); font-weight:700;
+  transition:color var(--t);
+}
+.ps-contact a:hover{ color:var(--pink-hot); }
+
+/* responsive */
+@media(max-width:640px){
+  .ps-grid{ grid-template-columns:1fr; }
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────── */
+@media(max-width:960px){
+  .order-wrap{grid-template-columns:1fr;gap:2rem;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .f-brand{grid-column:1/-1;}
+}
+@media(max-width:640px){
+  .nav-links{display:none;}
+  .nav-burger{display:flex;}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:rgba(255,245,250,.97);backdrop-filter:blur(14px);padding:1.5rem;gap:1.1rem;border-bottom:1.5px solid rgba(255,183,197,.3);z-index:490;}
+  .nav-socials{justify-content:center;}
+  .hero-badges{gap:1rem;}
+  .badge-div{display:none;}
+  .footer-grid{grid-template-columns:1fr;}
+  .pricing-row{grid-template-columns:1fr;}
+  .pod-banner{flex-direction:column;text-align:center;}
+  .tip-label{display:none;}
+  .tip-jar{padding:.7rem .85rem;}
+  .slide-card{width:clamp(240px,80vw,340px);height:clamp(300px,60vw,420px);}
+  .slide-arrow{width:38px;height:38px;font-size:1rem;}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important;}
+  .blob,.sp,.tip-jar,.gradient-text{animation:none !important;}
+}
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- BLOB BACKGROUND -->
+  <div class="bg-scene" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+    <div class="noise-overlay"></div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" role="dialog" aria-modal="true">
+    <button id="lb-close" aria-label="Close">×</button>
+    <img id="lb-img" src="" alt="" />
+  </div>
+
+  <!-- TIP JAR -->
+  <a href="https://ko-fi.com/chibiwibuart" target="_blank" rel="noopener"
+     class="tip-jar" aria-label="Support me on Ko-fi">
+    <span>☕</span>
+    <span class="tip-label">Tip Me</span>
+  </a>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <header class="glass-nav" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">✨ VoruVoru</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#articles">Articles</a></li>
+        <li><a href="#commissions">Commissions</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#affiliates">Affiliates</a></li>
+        <li class="nav-socials">
+          <a href="https://twitter.com/chibiwibuart" target="_blank" rel="noopener" aria-label="Twitter">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.256 5.628zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://instagram.com/chibiwibuart" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </a>
+          <a href="https://tiktok.com/@chibiwibuart" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.02-.07z"/></svg>
+          </a>
+        </li>
+        <li><a href="#order" class="nav-cta">Order ✨</a></li>
+      </ul>
+      <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ═══ HERO ═══ -->
+    <section id="hero">
+      <div class="hero-glass">
+        <div class="hero-sparkles" aria-hidden="true">
+          <span class="sp sp1">✦</span><span class="sp sp2">✦</span>
+          <span class="sp sp3">✦</span><span class="sp sp4">★</span><span class="sp sp5">✦</span>
+        </div>
+        <p class="hero-eyebrow">🌸 Commissions Open</p>
+        <h1 class="hero-h1">Your Character,<br><span class="gradient-text">Chibi-fied.</span></h1>
+        <p class="hero-sub">Adorable custom art for VTubers, streamers &amp; anime fans.<br>Twitch emotes · PNG tubers · Character sheets 💕</p>
+        <div class="hero-btns">
+          <a href="#commissions" class="btn-glow">Order ✨</a>
+          <a href="#gallery" class="btn-outline">See My Work</a>
+        </div>
+        <div class="hero-badges">
+          <div class="badge"><span class="badge-n">200+</span><span class="badge-l">Happy Clients</span></div>
+          <div class="badge-div"></div>
+          <div class="badge"><span class="badge-n">48h</span><span class="badge-l">Avg Delivery</span></div>
+          <div class="badge-div"></div>
+          <div class="badge"><span class="badge-n">⭐ 5.0</span><span class="badge-l">Rating</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ GALLERY SLIDESHOW ═══ -->
+    <section id="gallery">
+      <div class="section-head reveal">
+        <p class="s-label">Portfolio</p>
+        <h2 class="s-title">🌸 Recent Artworks 🌸</h2>
+        <p class="s-sub">Scroll or use the arrows to browse — click any piece to view full size ✨</p>
+      </div>
+
+      <div class="slideshow-outer reveal" style="--d:.1s">
+        <!-- Prev arrow -->
+        <button class="slide-arrow prev" id="slidePrev" aria-label="Previous">&#8249;</button>
+
+        <!--
+          HOW TO ADD YOUR ART:
+          Replace .art-placeholder divs with actual images:
+          <img data-src="assets/art-01.webp" loading="lazy" decoding="async"
+               width="420" height="520" alt="VTuber chibi commission" />
+        -->
+        <div class="gallery-slider" id="gallerySlider">
+
+          <div class="slide-card" data-cat="avatar">
+            <div class="art-placeholder"><span class="art-emoji">🎨</span>VTuber Avatar</div>
+            <div class="slide-caption"><span>VTuber Avatar</span></div>
+          </div>
+          <div class="slide-card" data-cat="emote">
+            <div class="art-placeholder"><span class="art-emoji">💬</span>Twitch Emotes</div>
+            <div class="slide-caption"><span>Twitch Emote Pack</span></div>
+          </div>
+          <div class="slide-card" data-cat="fullbody">
+            <div class="art-placeholder"><span class="art-emoji">🌟</span>Full-Body Chibi</div>
+            <div class="slide-caption"><span>Full-Body Commission</span></div>
+          </div>
+          <div class="slide-card" data-cat="merch">
+            <div class="art-placeholder"><span class="art-emoji">👕</span>Merch Design</div>
+            <div class="slide-caption"><span>Merch Art</span></div>
+          </div>
+          <div class="slide-card" data-cat="avatar">
+            <div class="art-placeholder"><span class="art-emoji">🌸</span>OC Commission</div>
+            <div class="slide-caption"><span>Original Character</span></div>
+          </div>
+          <div class="slide-card" data-cat="emote">
+            <div class="art-placeholder"><span class="art-emoji">✨</span>Emote Set</div>
+            <div class="slide-caption"><span>Emote Bundle</span></div>
+          </div>
+
+        </div><!-- /gallery-slider -->
+
+        <!-- Next arrow -->
+        <button class="slide-arrow next" id="slideNext" aria-label="Next">&#8250;</button>
+      </div>
+
+      <!-- Dot indicators -->
+      <div class="slide-dots" id="slideDots" aria-label="Slide indicators"></div>
+
+      <div class="ad-slot reveal" style="margin:2rem auto 0;max-width:728px;">[ Google AdSense 728×90 — replace with your code ]</div>
+    </section>
+
+    <!-- ═══ COMMISSIONS / PRICING ═══ -->
+    <section id="commissions" class="section-wrap">
+      <div class="section-head reveal">
+        <p class="s-label">Commission Rates</p>
+        <h2 class="s-title">🎨 Pick Your Tier 🎨</h2>
+        <p class="s-sub">All prices USD via PayPal · Commercial use: 1.5×–3× base price</p>
+      </div>
+
+      <div class="tos-glass reveal">
+        <div class="tos-icon">⚠️</div>
+        <div>
+          <strong>Commercial License Required</strong> for monetized streams, YouTube, merch &amp; brand deals.<br />
+          Base prices = <strong>Personal Use only.</strong> Select "Commercial" in the form below for a custom quote.
+          <a href="tos.html" class="tos-link">Full ToS →</a>
+        </div>
+      </div>
+
+      <div class="pricing-row">
+
+        <div class="price-card glass-card reveal" style="--d:.05s">
+          <div class="pc-icon">🙂</div>
+          <h3 class="pc-name">Headshot</h3>
+          <p class="pc-desc">Bust-up portrait — profile pics &amp; stream overlays.</p>
+          <div class="pc-price">$30<span>/personal</span></div>
+          <div class="pc-days">⏱ 3–5 business days</div>
+          <ul class="pc-feats">
+            <li>1 character</li><li>Simple / gradient BG</li>
+            <li>PNG + PSD</li><li>1 revision</li>
+          </ul>
+          <div class="paypal-wrap" id="paypal-headshot"></div><p class="setup-note paypal-setup-note" hidden>PayPal checkout will appear after Live Client ID is configured.</p>
+          <button class="btn-altorder" data-tier="Headshot - Personal ($30)">Or fill the request form ↓</button>
+        </div>
+
+        <div class="price-card glass-card featured reveal" style="--d:.15s">
+          <div class="pc-ribbon">Most Popular 💕</div>
+          <div class="pc-icon">✨</div>
+          <h3 class="pc-name">Half-Body</h3>
+          <p class="pc-desc">Waist-up — Discord stickers &amp; banners.</p>
+          <div class="pc-price">$50<span>/personal</span></div>
+          <div class="pc-days">⏱ 5–7 business days</div>
+          <ul class="pc-feats">
+            <li>1 character</li><li>Detailed BG</li>
+            <li>PNG + PSD</li><li>2 revisions</li><li>Accessories</li>
+          </ul>
+          <div class="paypal-wrap" id="paypal-halfbody"></div><p class="setup-note paypal-setup-note" hidden>PayPal checkout will appear after Live Client ID is configured.</p>
+          <button class="btn-altorder" data-tier="Half-Body - Personal ($50)">Or fill the request form ↓</button>
+        </div>
+
+        <div class="price-card glass-card reveal" style="--d:.25s">
+          <div class="pc-icon">🌟</div>
+          <h3 class="pc-name">Full-Body</h3>
+          <p class="pc-desc">Full character sheet — VTuber refs &amp; merch prints.</p>
+          <div class="pc-price">$70<span>/personal</span></div>
+          <div class="pc-days">⏱ 7–10 business days</div>
+          <ul class="pc-feats">
+            <li>1 character</li><li>Full painted BG</li>
+            <li>PNG + PSD</li><li>3 revisions</li><li>Front + back poses</li>
+          </ul>
+          <div class="paypal-wrap" id="paypal-fullbody"></div><p class="setup-note paypal-setup-note" hidden>PayPal checkout will appear after Live Client ID is configured.</p>
+          <button class="btn-altorder" data-tier="Full-Body - Personal ($70)">Or fill the request form ↓</button>
+        </div>
+
+      </div>
+
+      <div class="license-note reveal">
+        📜 Need <strong>commercial rights</strong>? Starting at 1.5× base price.
+        Choose "Commercial" in the form &amp; I'll quote within 24h.
+        <a href="license.html">License guide →</a>
+      </div>
+
+      <!-- ORDER FORM -->
+      <div class="order-wrap" id="order">
+        <div class="order-info reveal">
+          <h3 class="order-info-title">Before you order 🌸</h3>
+          <div class="info-block">
+            <h4>I accept</h4>
+            <p>OC characters, VTuber personas, fan art (personal). No NSFW. Reply within 24h.</p>
+          </div>
+          <div class="info-block">
+            <h4>Prepare</h4>
+            <p>Character reference or description + usage (personal / commercial).</p>
+          </div>
+          <div class="info-block">
+            <h4>Payment</h4>
+            <p>50% deposit via PayPal to start, 50% on delivery. Or pay directly above.</p>
+          </div>
+
+          <!-- ─── AFFILIATE STRIP INSIDE ORDER FORM ───
+               Ganti href dengan link affiliasi kamu.
+               Tambah class "disabled" untuk slot yang belum aktif.
+          -->
+          <div class="aff-inline-strip">
+            <p class="aff-inline-label">🖊️ Tools I Recommend</p>
+
+            <a href="YOUR_WACOM_AFFILIATE_LINK" target="_blank" rel="noopener sponsored"
+               class="aff-inline-card">
+              <span class="aic-icon">🖊️</span>
+              <span class="aic-text">Wacom Drawing Tablet</span>
+              <span class="aic-badge">Amazon ↗</span>
+            </a>
+
+            <a href="YOUR_CLIPSTUDIO_AFFILIATE_LINK" target="_blank" rel="noopener sponsored"
+               class="aff-inline-card">
+              <span class="aic-icon">🎨</span>
+              <span class="aic-text">Clip Studio Paint PRO</span>
+              <span class="aic-badge">Affiliate ↗</span>
+            </a>
+
+            <a href="#" class="aff-inline-card disabled" aria-disabled="true">
+              <span class="aic-icon">📦</span>
+              <span class="aic-text">Merch Fulfillment (coming soon)</span>
+              <span class="aic-badge">Soon</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- TODO: Ganti YOUR_FORM_ID → dari formspree.io -->
+        <form class="order-form glass-card reveal" id="commissionForm"
+              action="#" data-formspree-placeholder="YOUR_FORM_ID" method="POST"
+              enctype="multipart/form-data" style="--d:.1s">
+          <h3 class="form-title">✉️ Send a Request</h3>
+          <div class="fg"><label class="fl" for="fname">Name / Discord Handle</label>
+            <input class="fc" type="text" id="fname" name="name" placeholder="StarryNova#1234" required /></div>
+          <div class="fg"><label class="fl" for="femail">Email Address</label>
+            <input class="fc" type="email" id="femail" name="email" placeholder="you@example.com" required /></div>
+
+          <!-- ── WHATSAPP FIELD (Perubahan #1) ── -->
+          <div class="fg">
+            <label class="fl" for="fwa">
+              WhatsApp Number
+              <span class="fl-hint">for order updates &amp; WA notifications</span>
+            </label>
+            <div class="wa-input-wrap">
+              <span class="wa-prefix">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                +
+              </span>
+              <input class="fc wa-fc" type="tel" id="fwa" name="whatsapp"
+                     placeholder="628123456789  (country code, no spaces)"
+                     pattern="[0-9]{7,15}"
+                     title="Digits only, include country code e.g. 628123456789" />
+            </div>
+            <p class="fhint">📱 Digits only, include country code — e.g. <strong>628123456789</strong> for Indonesia. Used to send you an order confirmation on WhatsApp.</p>
+          </div>
+
+          <div class="fg"><label class="fl" for="ftier">Commission Tier</label>
+            <select class="fc" id="ftier" name="tier" required>
+              <option value="">Select tier…</option>
+              <option>Headshot — Personal ($30)</option>
+              <option>Headshot — Commercial ($45+)</option>
+              <option>Half-Body — Personal ($50)</option>
+              <option>Half-Body — Commercial ($75+)</option>
+              <option>Full-Body — Personal ($70)</option>
+              <option>Full-Body — Commercial ($105+)</option>
+              <option>Twitch Emotes Bundle</option>
+              <option>VTuber Asset Pack</option>
+              <option>Custom Commercial Art</option>
+            </select></div>
+          <div class="fg"><label class="fl" for="fdesc">Character Description</label>
+            <textarea class="fc" id="fdesc" name="details" rows="4" placeholder="Describe your character or paste a reference link…" required></textarea></div>
+          <div class="fg"><label class="fl" for="fref">Reference Image (optional)</label>
+            <input class="fc ffile" type="file" id="fref" name="reference" accept="image/*" />
+            <p class="fhint">PNG/JPG/WebP · max 25 MB</p></div>
+          <div class="fg"><label class="fl" for="fnotes">Extra Notes</label>
+            <textarea class="fc" id="fnotes" name="extras" rows="2" placeholder="Deadline, style refs, special requests…"></textarea></div>
+          <button type="submit" class="btn-glow w100" id="submitBtn">Send Order Request ✨</button>
+          <p class="fstatus" id="formStatus" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ═══ DIGITAL SHOP ═══ -->
+    <section id="shop" class="section-wrap">
+      <div class="section-head reveal">
+        <p class="s-label">Digital Shop</p>
+        <h2 class="s-title">🛍️ Instant Downloads 🛍️</h2>
+        <p class="s-sub">Ready-to-use assets — buy once, yours forever (personal license)</p>
+      </div>
+      <div class="shop-grid">
+        <div class="shop-card glass-card reveal" style="--d:.05s">
+          <div class="sc-thumb">🎭</div>
+          <div class="sc-body">
+            <div class="sc-name">Chibi Emote Pack Vol.1</div>
+            <div class="sc-meta">10 expressions · PNG · 112px</div>
+            <div class="sc-price">$12</div>
+            <div class="paypal-wrap" id="paypal-shop1"></div><p class="setup-note paypal-setup-note" hidden>PayPal checkout will appear after Live Client ID is configured.</p>
+          </div>
+        </div>
+        <div class="shop-card glass-card reveal" style="--d:.12s">
+          <div class="sc-thumb">🖌️</div>
+          <div class="sc-body">
+            <div class="sc-name">Chibi Base Poses</div>
+            <div class="sc-meta">5 poses · PSD + PNG</div>
+            <div class="sc-price">$5</div>
+            <div class="paypal-wrap" id="paypal-shop2"></div><p class="setup-note paypal-setup-note" hidden>PayPal checkout will appear after Live Client ID is configured.</p>
+          </div>
+        </div>
+        <div class="shop-card glass-card reveal" style="--d:.19s">
+          <div class="sc-thumb">🖼️</div>
+          <div class="sc-body">
+            <div class="sc-name">Wallpaper Pack</div>
+            <div class="sc-meta">6 wallpapers · 4K</div>
+            <div class="sc-price">$8</div>
+            <div class="paypal-wrap" id="paypal-shop3"></div><p class="setup-note paypal-setup-note" hidden>PayPal checkout will appear after Live Client ID is configured.</p>
+          </div>
+        </div>
+        <div class="shop-card glass-card reveal" style="--d:.26s">
+          <div class="sc-thumb">✏️</div>
+          <div class="sc-body">
+            <div class="sc-name">Emote Template</div>
+            <div class="sc-meta">PSD · 112/56/28px</div>
+            <div class="sc-price">$10</div>
+            <div class="paypal-wrap" id="paypal-shop4"></div><p class="setup-note paypal-setup-note" hidden>PayPal checkout will appear after Live Client ID is configured.</p>
+          </div>
+        </div>
+      </div>
+      <div class="pod-banner glass-card reveal" style="--d:.1s">
+        <span class="pod-emoji">👕</span>
+        <div class="pod-text">
+          <h3>Want Physical Merch?</h3>
+          <p>T-shirts, hoodies, stickers &amp; mugs with original designs. Ships worldwide 🌍</p>
+        </div>
+        <a href="https://www.redbubble.com/people/YOUR_REDBUBBLE" target="_blank" rel="noopener" class="btn-glow">Order Merch →</a>
+      </div>
+    </section>
+
+    <!-- ═══ TOOLS ═══ -->
+    <section id="tools" class="section-wrap">
+      <div class="section-head reveal">
+        <p class="s-label">My Toolkit</p>
+        <h2 class="s-title">🖌️ Tools I Use & Love 🖌️</h2>
+        <p class="s-sub">Support me by checking out my gear — some are affiliate links!</p>
+      </div>
+      <div class="tools-grid">
+        <a href="YOUR_WACOM_LINK" target="_blank" rel="noopener sponsored" class="tool-card glass-card reveal" style="--d:.05s">
+          <div class="tc-icon">🖊️</div><div class="tc-name">Wacom Cintiq 16</div>
+          <div class="tc-desc">Drawing tablet for all commissions</div><div class="tc-badge">Amazon ↗</div>
+        </a>
+        <a href="YOUR_CLIPSTUDIO_LINK" target="_blank" rel="noopener sponsored" class="tool-card glass-card reveal" style="--d:.12s">
+          <div class="tc-icon">🎨</div><div class="tc-name">Clip Studio Paint</div>
+          <div class="tc-desc">Primary illustration software</div><div class="tc-badge">Affiliate ↗</div>
+        </a>
+        <a href="YOUR_IPAD_LINK" target="_blank" rel="noopener sponsored" class="tool-card glass-card reveal" style="--d:.19s">
+          <div class="tc-icon">📱</div><div class="tc-name">iPad + Apple Pencil</div>
+          <div class="tc-desc">Sketching on the go</div><div class="tc-badge">Amazon ↗</div>
+        </a>
+        <a href="YOUR_PROCREATE_LINK" target="_blank" rel="noopener sponsored" class="tool-card glass-card reveal" style="--d:.26s">
+          <div class="tc-icon">✨</div><div class="tc-name">Procreate</div>
+          <div class="tc-desc">Quick chibi sketches on iPad</div><div class="tc-badge">App Store ↗</div>
+        </a>
+      </div>
+      <div class="ad-slot reveal">[ Google AdSense 728×90 — replace with your code ]</div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         AFFILIATE SECTION
+         ─────────────────────────────────────────────────────
+         STATUS GUIDE:
+           active-card  = link sudah aktif, rel="noopener sponsored"
+           empty-card   = slot belum diisi, pointer-events:none
+
+         Cara aktifkan slot:
+           1. Ganti href="#" dengan link affiliasi kamu
+           2. Ubah class "empty-card" → "active-card"
+           3. Ubah .aff-status dari "soon" / "open" → "live"
+           4. Hapus <div class="aff-ribbon"> dari card tersebut
+    ═══════════════════════════════════════════════════════ -->
+    <section id="affiliates" class="section-wrap">
+
+      <div class="section-head reveal">
+        <p class="s-label">Partners & Affiliates</p>
+        <h2 class="s-title">🤝 Recommended Partners 🤝</h2>
+        <p class="s-sub">Tools, platforms, and brands I personally use or trust — clearly marked when I earn a commission.</p>
+      </div>
+
+      <!-- FTC / Google Disclosure -->
+      <div class="aff-disclosure reveal">
+        <span class="aff-disclosure-icon">ℹ️</span>
+        <span>
+          <strong>Affiliate Disclosure:</strong> Some links on this page are affiliate links.
+          If you purchase through them, I may earn a small commission at <strong>no extra cost to you</strong>.
+          This helps support my art and keeps commissions open! 🌸
+          All recommendations are tools I genuinely use or believe in.
+          <a href="privacy.html">Privacy Policy →</a>
+        </span>
+      </div>
+
+      <!-- ── FEATURED HERO AFFILIATE (top partner slot) ── -->
+      <!-- Active when you have a main sponsor. Remove/hide until then. -->
+      <div class="aff-hero glass-card reveal" style="background:linear-gradient(135deg,rgba(255,183,197,.18) 0%,rgba(201,184,255,.12) 100%);--d:.05s">
+        <div class="aff-hero-badge">✦ Featured Partner</div>
+        <div class="aff-hero-logo">🖊️</div>
+        <div class="aff-hero-body">
+          <h3>Wacom Drawing Tablets</h3>
+          <p>The tablet I use for every single commission — from quick headshot sketches to detailed full-body character sheets. Wacom's pen pressure and display accuracy genuinely changed how I draw.</p>
+          <p class="aff-hero-comm">Earn: up to 8% commission per sale · Amazon Associates</p>
+        </div>
+        <!-- Change href to your Amazon affiliate link, remove disabled class when ready -->
+        <a href="YOUR_WACOM_AFFILIATE_LINK" target="_blank" rel="noopener sponsored"
+           class="btn-glow">Shop Wacom →</a>
+      </div>
+
+      <!-- ── CATEGORY FILTER TABS ── -->
+      <div class="aff-tabs reveal" role="group" aria-label="Filter affiliate categories">
+        <button class="aff-tab active" data-aff="all">All</button>
+        <button class="aff-tab" data-aff="art">🎨 Art Tools</button>
+        <button class="aff-tab" data-aff="tech">💻 Tech & Gear</button>
+        <button class="aff-tab" data-aff="learn">📚 Learning</button>
+        <button class="aff-tab" data-aff="stream">🎙️ Streaming</button>
+        <button class="aff-tab" data-aff="merch">👕 Merch & PoD</button>
+        <button class="aff-tab" data-aff="shop">🛒 Online Shops</button>
+      </div>
+
+      <!-- ── AFFILIATE CARD GRID ── -->
+      <div class="aff-grid" id="affGrid">
+
+        <!-- ════ ART TOOLS ════ -->
+
+        <!-- LIVE: Wacom (Amazon) -->
+        <a href="YOUR_WACOM_AFFILIATE_LINK" target="_blank" rel="noopener sponsored"
+           class="aff-card active-card glass-card reveal" data-aff="art" style="--d:.04s">
+          <div class="aff-card-header">
+            <div class="aff-logo">🖊️</div>
+            <div class="aff-header-text">
+              <div class="aff-partner">Wacom Tablets</div>
+              <span class="aff-category-pill pill-art">🎨 Art Tools</span>
+            </div>
+          </div>
+          <div class="aff-card-body">
+            <p class="aff-desc">Cintiq & Intuos series — the drawing tablets I use daily for client commissions.</p>
+            <span class="aff-commission">Up to 8% commission · Amazon Associates</span>
+          </div>
+          <div class="aff-card-foot">
+            <span class="aff-status live">● Live</span>
+            <span class="aff-cta">Shop now →</span>
+          </div>
+        </a>
+
+        <!-- LIVE: Clip Studio Paint -->
+        <a href="YOUR_CLIPSTUDIO_AFFILIATE_LINK" target="_blank" rel="noopener sponsored"
+           class="aff-card active-card glass-card reveal" data-aff="art" style="--d:.08s">
+          <div class="aff-card-header">
+            <div class="aff-logo">🎨</div>
+            <div class="aff-header-text">
+              <div class="aff-partner">Clip Studio Paint</div>
+              <span class="aff-category-pill pill-art">🎨 Art Tools</span>
+            </div>
+          </div>
+          <div class="aff-card-body">
+            <p class="aff-desc">My primary illustration software for all chibi art — PRO and EX versions available.</p>
+            <span class="aff-commission">Up to 15% commission · Official Program</span>
+          </div>
+          <div class="aff-card-foot">
+            <span class="aff-status live">● Live</span>
+            <span class="aff-cta">Get it →</span>
+          </div>
+        </a>
+
+        <!-- LIVE: Procreate (App Store) -->
+        <a href="YOUR_PROCREATE_AFFILIATE_LINK" target="_blank" rel="noopener sponsored"
+           class="aff-card active-card glass-card reveal" data-aff="art" style="--d:.12s">
+          <div class="aff-card-header">
+            <div class="aff-logo">✏️</div>
+            <div class="aff-header-text">
+              <div class="aff-partner">Procreate</div>
+              <span class="aff-category-pill pill-art">🎨 Art Tools</span>
+            </div>
+          </div>
+          <div class="aff-card-body">
+            <p class="aff-desc">iPad illustration app for quick sketching, inking and colour blocking on-the-go.</p>
+            <span class="aff-commission">Apple Affiliate Program</span>
+          </div>
+          <div class="aff-card-foot">
+            <span class="aff-status live">● Live</span>
+            <span class="aff-cta">App Store →</span>
+          </div>
+        </a>
+
+        <!-- SLOT: Adobe / Canva — belum aktif -->
+        <div class="aff-card empty-card glass-card reveal" data-aff="art" style="--d:.16s" aria-hidden="true">
+          <div class="aff-ribbon">Coming Soon</div>
+          <div class="aff-card-header">
+            <div class="aff-logo">🖼️</div>
+            <div class="aff-header-text">
+              <div class="aff-partner">Adobe / Canva</div>
+              <span class="aff-category-pill pill-art">🎨 Art Tools</span>
+            </div>
+          </div>
+          <div class="aff-card-body">
+            <p class="aff-desc">Design tools for thumbnails, overlays and social media graphics.</p>
+            <span class="aff-commission tbd">Rate TBD — partner pending</span>
+          </div>
+          <div class="aff-card-foot">
+            <span class="aff-status soon">◌ Coming Soon</span>
+            <span class="aff-cta disabled">—</span>
+          </div>
+        </div>
+
+        <!-- ════ TECH & GEAR ════ -->
+
+        <!-- LIVE: iPad (Amazon) -->
+        <a href="YOUR_IPAD_AFFILIATE_LINK" target="_blank" rel="noopener sponsored"
+           class="aff-card active-card glass-card reveal" data-aff="tech" style="--d:.06s">
+          <div class="aff-card-header">
+            <div class="aff-logo">📱</div>
+            <div class="aff-header-text">
+              <div class="aff-partner">iPad + Apple Pencil</div>
+              <span class="aff-category-pill pill-tech">💻 Tech & Gear</span>
+            </div>
+          </div>
+          <div class="aff-card-body">
+            <p class="aff-desc">The hardware setup for mobile sketching — iPad Pro + Apple Pencil 2nd gen.</p>
+            <span class="aff-commission">Up to 4% commission · Amazon Associates</span>
+          </div>
+          <div class="aff-card-foot">
+            <span class="aff-status live">● Live</span>
+            <span class="aff-cta">Shop now →</span>
+          </div>
+        </a>
+
+        <!-- SLOT: Monitor / Color-Accurate Display -->
+        <div class="aff-card empty-card glass-card reveal" data-aff="tech" style="--d:.10s" aria-hidden="true">
+          <div class="aff-ribbon">Coming Soon</div>
+          <div class="aff-card-header">
+            <div class="aff-logo">🖥️</div>
+            <div class="aff-header-text">
+              <div class="aff-partner">Color-Accurate Monitor</div>
+              <span class="aff-category-pill pill-tech">💻 Tech & Gear</span>
+            </div>
+          </div>
+          <div class="aff-card-body">
+            <p class="aff-desc">A colour-accurate IPS display for true-to-life art colours — slot reserved.</p>
+            <span class="aff-commission tbd">Rate TBD — slot open</span>
+          </div>
+          <div class="aff-card-foot">
+            <span class="aff-status open">◎ Slot Open</span>
+            <span class="aff-cta disabled">—</span>
+          </div>
+        </div>
+
+        <!-- ════ LEARNING ════ -->
+
+        <!-- SLOT: Skillshare / Udemy -->
+        <div class="aff-card empty-card glass-card reveal" data-aff="learn" style="--d:.06s" aria-hidden="true">
+          <div class="aff-ribbon">Coming Soon</div>
+          <div class="aff-card-header">
+            <div class="aff-logo">📚</div>
+            <div class="aff-header-text">
+              <div class="aff-partner">Skillshare / Udemy</div>
+              <span class="aff-category-pill pill-learn">📚 Learning</span>
+            </div>
+          </div>
+          <div class="aff-card-body">
+            <p class="aff-desc">Online courses for illustration, character design, and animation fundamentals.</p>
+            <span class="aff-commission tbd">Up to 40% commission — pending approval</span>
+          </div>
+          <div class="aff-card-foot">
+            <span class="aff-status soon">◌ Coming Soon</span>
+            <span class="aff-cta disabled">—</span>
+          </div>
+        </div>
+
+        <!-- SLOT: Course / Tutorial platform -->
+        <div class="aff-card empty-card glass-card reveal" data-aff="learn" style="--d:.10s" aria-hidden="true">
+          <div class="aff-ribbon">Slot Open</div>
+          <div class="aff-card-header">
+            <div class="aff-logo">🎓</div>
+            <div class="aff-header-text">
+              <div class="aff-partner">Art Course Platform</div>
+              <span class="aff-category-pill pill-learn">📚 Learning</span>
+            </div>
+          </div>
+          <div class="aff-card-body">
+            <p class="aff-desc">Reserved slot for an art education platform. Interested in partnering? Contact me!</p>
+            <span class="aff-commission tbd">Slot available · DM to discuss</span>
+          </div>
+          <div class="aff-card-foot">
+            <span class="aff-status open">◎ Slot Open</span>
+            <span class="aff-cta disabled">—</span>
+          </div>
+        </div>
+
+        <!-- ════ STREAMING ════ -->
+
+        <!-- SLOT: StreamElements / Streamlabs -->
+        <div class="aff-card empty-card glass-card reveal" data-aff="stream" style="--d:.06s" aria-hidden="true">
+          <div class="aff-ribbon">Coming Soon</div>
+          <div class="aff-card-header">
+            <div class="aff-logo">🎙️</div>
+            <div class="aff-header-text">
+              <div class="aff-partner">StreamElements / Streamlabs</div>
+              <span class="aff-category-pill pill-stream">🎙️ Streaming</span>
+            </div>
+          </div>
+          <div class="aff-card-body">
+            <p class="aff-desc">Stream management tools, alerts, and overlays for VTubers and streamers.</p>
+            <span class="aff-commission tbd">Partner program — pending</span>
+          </div>
+          <div class="aff-card-foot">
+            <span class="aff-status soon">◌ Coming Soon</span>
+            <span class="aff-cta disabled">—</span>
+          </div>
+        </div>
+
+        <!-- SLOT: Mic / Audio gear -->
+        <div class="aff-card empty-card glass-card reveal" data-aff="stream" style="--d:.10s" aria-hidden="true">
+          <div class="aff-ribbon">Slot Open</div>
+          <div class="aff-card-header">
+            <div class="aff-logo">🎤</div>
+            <div class="aff-header-text">
+              <div class="aff-partner">Streaming Mic / Audio</div>
+              <span class="aff-category-pill pill-stream">🎙️ Streaming</span>
+            </div>
+          </div>
+          <div class="aff-card-body">
+            <p class="aff-desc">Reserved for a microphone or audio brand partnership. Open for outreach.</p>
+            <span class="aff-commission tbd">Slot available · Contact me</span>
+          </div>
+          <div class="aff-card-foot">
+            <span class="aff-status open">◎ Slot Open</span>
+            <span class="aff-cta disabled">—</span>
+          </div>
+        </div>
+
+        <!-- ════ MERCH / POD ════ -->
+
+        <!-- LIVE: Redbubble -->
+        <a href="https://www.redbubble.com/people/YOUR_REDBUBBLE"
+           target="_blank" rel="noopener sponsored"
+           class="aff-card active-card glass-card reveal" data-aff="merch" style="--d:.06s">
+          <div class="aff-card-header">
+            <div class="aff-logo">👕</div>
+            <div class="aff-header-text">
+              <div class="aff-partner">Redbubble (PoD)</div>
+              <span class="aff-category-pill pill-merch">👕 Merch & PoD</span>
+            </div>
+          </div>
+          <div class="aff-card-body">
+            <p class="aff-desc">Physical merch with my original designs — t-shirts, hoodies, stickers, and mugs. Ships worldwide.</p>
+            <span class="aff-commission">Artist royalty per sale</span>
+          </div>
+          <div class="aff-card-foot">
+            <span class="aff-status live">● Live</span>
+            <span class="aff-cta">Shop Merch →</span>
+          </div>
+        </a>
+
+        <!-- SLOT: Printify / Printful -->
+        <div class="aff-card empty-card glass-card reveal" data-aff="merch" style="--d:.10s" aria-hidden="true">
+          <div class="aff-ribbon">Coming Soon</div>
+          <div class="aff-card-header">
+            <div class="aff-logo">📦</div>
+            <div class="aff-header-text">
+              <div class="aff-partner">Printify / Printful</div>
+              <span class="aff-category-pill pill-merch">👕 Merch & PoD</span>
+            </div>
+          </div>
+          <div class="aff-card-body">
+            <p class="aff-desc">PoD fulfilment platforms for creators who want to run their own merch store.</p>
+            <span class="aff-commission tbd">Affiliate program — pending</span>
+          </div>
+          <div class="aff-card-foot">
+            <span class="aff-status soon">◌ Coming Soon</span>
+            <span class="aff-cta disabled">—</span>
+          </div>
+        </div>
+
+        <!-- ════ ONLINE SHOPS ════ -->
+
+        <!-- LIVE: Amazon (general) -->
+        <a href="YOUR_AMAZON_GENERAL_LINK" target="_blank" rel="noopener sponsored"
+           class="aff-card active-card glass-card reveal" data-aff="shop" style="--d:.06s">
+          <div class="aff-card-header">
+            <div class="aff-logo">🛒</div>
+            <div class="aff-header-text">
+              <div class="aff-partner">Amazon (Art Supplies)</div>
+              <span class="aff-category-pill pill-shop">🛒 Online Shops</span>
+            </div>
+          </div>
+          <div class="aff-card-body">
+            <p class="aff-desc">Sketchbooks, markers, scanners, and art supplies I recommend — curated list.</p>
+            <span class="aff-commission">Up to 10% commission · Amazon Associates</span>
+          </div>
+          <div class="aff-card-foot">
+            <span class="aff-status live">● Live</span>
+            <span class="aff-cta">View list →</span>
+          </div>
+        </a>
+
+        <!-- SLOT: Etsy / Society6 / other shop -->
+        <div class="aff-card empty-card glass-card reveal" data-aff="shop" style="--d:.10s" aria-hidden="true">
+          <div class="aff-ribbon">Slot Open</div>
+          <div class="aff-card-header">
+            <div class="aff-logo">🏪</div>
+            <div class="aff-header-text">
+              <div class="aff-partner">Etsy / Society6</div>
+              <span class="aff-category-pill pill-shop">🛒 Online Shops</span>
+            </div>
+          </div>
+          <div class="aff-card-body">
+            <p class="aff-desc">Marketplace slot reserved for art-adjacent shop partnerships. Open for outreach.</p>
+            <span class="aff-commission tbd">Slot available · Contact me</span>
+          </div>
+          <div class="aff-card-foot">
+            <span class="aff-status open">◎ Slot Open</span>
+            <span class="aff-cta disabled">—</span>
+          </div>
+        </div>
+
+      </div><!-- /aff-grid -->
+
+      <!-- Partnership CTA -->
+      <div class="aff-hero glass-card reveal" style="background:linear-gradient(135deg,rgba(201,184,255,.15) 0%,rgba(161,196,253,.12) 100%);--d:.1s">
+        <div class="aff-hero-logo">📬</div>
+        <div class="aff-hero-body">
+          <h3>Want to Partner With Me?</h3>
+          <p>I'm open to affiliate partnerships with art tool brands, streaming platforms, and creator economy services that align with my audience of VTubers and digital artists worldwide. I'll only promote what I genuinely use or believe in.</p>
+          <p class="aff-hero-comm">📩 Reach out: rrudiawan@gmail.com · DM on Twitter @chibiwibuart</p>
+        </div>
+        <a href="mailto:rrudiawan@gmail.com?subject=Affiliate%20Partnership%20Inquiry%20–%20Chibi%20Wibu%20Art"
+           class="btn-glow">Get in Touch →</a>
+      </div>
+
+    </section>
+    <!-- ═══ SUPPORT ═══ -->
+    <section id="support" class="section-wrap">
+      <div class="section-head reveal" style="margin-bottom:1.5rem;">
+        <p class="s-label">Support the Art</p>
+        <p class="s-sub" style="text-align:center;">Love what I do? Leave a tip or follow on social media 💕</p>
+      </div>
+      <div class="support-row">
+        <a href="https://ko-fi.com/chibiwibuart"    target="_blank" rel="noopener" class="sup-btn glass-card reveal" style="--d:.04s">☕ Ko-fi</a>
+        <a href="https://patreon.com/chibiwibuart"   target="_blank" rel="noopener" class="sup-btn glass-card reveal" style="--d:.08s">🎨 Patreon</a>
+        <a href="https://karyakarsa.com/chibiwibu"   target="_blank" rel="noopener" class="sup-btn glass-card reveal" style="--d:.12s">🌙 KaryaKarsa</a>
+        <a href="https://twitter.com/chibiwibuart"   target="_blank" rel="noopener" class="sup-btn glass-card reveal" style="--d:.16s">🐦 Twitter</a>
+        <a href="https://instagram.com/chibiwibuart" target="_blank" rel="noopener" class="sup-btn glass-card reveal" style="--d:.20s">📷 Instagram</a>
+        <a href="https://tiktok.com/@chibiwibuart"   target="_blank" rel="noopener" class="sup-btn glass-card reveal" style="--d:.24s">🎵 TikTok</a>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         PARTNER SPOTLIGHT — 3 slot affiliasi perusahaan lain
+         ──────────────────────────────────────────────────────
+         CARA AKTIFKAN SLOT:
+         1. Ganti class "empty" → "live" pada .ps-card
+         2. Ubah <div> menjadi <a href="…" rel="noopener sponsored">
+         3. Ganti .ps-logo-wrap emoji/img dengan logo partner
+         4. Update .ps-name, .ps-tagline, .ps-cta
+         5. Hapus .ps-slot-label dari card tersebut
+    ═══════════════════════════════════════════════════════ -->
+    <section id="partner-spotlight">
+      <div class="ps-inner">
+
+        <span class="ps-label reveal">✦ Sponsored Partners &amp; Featured Brands ✦</span>
+
+        <div class="ps-grid">
+
+          <!-- ── SLOT 1 — ganti menjadi <a> saat link aktif ── -->
+          <div class="ps-card empty glass-card reveal" style="--d:.05s">
+            <span class="ps-slot-label">Slot Available</span>
+            <div class="ps-logo-wrap">🏢</div>
+            <div class="ps-name">Your Brand Here</div>
+            <p class="ps-tagline">Premium placement for art tools, streaming gear, or creator economy platforms. Reaches VTubers &amp; anime fans worldwide.</p>
+            <span class="ps-cta">Contact to Partner →</span>
+          </div>
+
+          <!-- ── SLOT 2 ── -->
+          <div class="ps-card empty glass-card reveal" style="--d:.12s">
+            <span class="ps-slot-label">Slot Available</span>
+            <div class="ps-logo-wrap">🏢</div>
+            <div class="ps-name">Your Brand Here</div>
+            <p class="ps-tagline">Ideal for software, merchandise, or platform brands targeting digital artists and content creators.</p>
+            <span class="ps-cta">Contact to Partner →</span>
+          </div>
+
+          <!-- ── SLOT 3 ── -->
+          <div class="ps-card empty glass-card reveal" style="--d:.19s">
+            <span class="ps-slot-label">Slot Available</span>
+            <div class="ps-logo-wrap">🏢</div>
+            <div class="ps-name">Your Brand Here</div>
+            <p class="ps-tagline">Featured brand placement with direct audience access to VTubers, streamers &amp; indie creators.</p>
+            <span class="ps-cta">Contact to Partner →</span>
+          </div>
+
+        </div><!-- /ps-grid -->
+
+        <p class="ps-contact reveal" style="--d:.25s">
+          Interested in partnering?
+          <a href="mailto:rrudiawan@gmail.com?subject=Partnership%20Inquiry%20–%20Chibi%20Wibu%20Art">Email rrudiawan@gmail.com</a>
+          or DM
+          <a href="https://twitter.com/chibiwibuart" target="_blank" rel="noopener">@chibiwibuart on Twitter</a> 🌸
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         NEWS SECTION — paling bawah (Rosuuri style)
+    ═══════════════════════════════════════════════════════ -->
+    <section id="news">
+      <div class="news-inner">
+        <div class="news-head reveal">
+          <div class="news-head-left">
+            <span class="news-label-sub">Latest Updates</span>
+          </div>
+          <div class="news-wordmark" aria-label="News">News</div>
+        </div>
+        <div class="news-grid" id="newsGrid">
+          <a href="news/new-commission-slots-open.html" class="news-card reveal" style="--d:.04s">
+            <div class="news-img-wrap">
+              <div class="news-img-ph"><span class="ph-emoji">🎨</span>New Commission Slots</div>
+              <span class="news-chip">Commissions</span>
+            </div>
+            <div class="news-date">Sep 15, 2026</div>
+            <div class="news-title">New commission slots are open! Half-body and full-body queues now available for Q4 2026</div>
+          </a>
+          <a href="news/emote-pack-vol2-launch.html" class="news-card reveal" style="--d:.08s">
+            <div class="news-img-wrap">
+              <div class="news-img-ph"><span class="ph-emoji">🎭</span>Emote Pack Vol.2</div>
+              <span class="news-chip">New Release</span>
+            </div>
+            <div class="news-date">Sep 5, 2026</div>
+            <div class="news-title">Chibi Emote Pack Vol.2 is now available in the shop — 12 new expressions including rage, cry, and hype</div>
+          </a>
+          <a href="news/fanart-feature-animefest.html" class="news-card reveal" style="--d:.12s">
+            <div class="news-img-wrap">
+              <div class="news-img-ph"><span class="ph-emoji">🌸</span>Fanart Feature</div>
+              <span class="news-chip">Featured</span>
+            </div>
+            <div class="news-date">Aug 28, 2026</div>
+            <div class="news-title">My VTuber chibi art was featured in AnimeFest 2026's official digital programme!</div>
+          </a>
+          <a href="news/merch-redbubble-launch.html" class="news-card reveal" style="--d:.16s">
+            <div class="news-img-wrap">
+              <div class="news-img-ph"><span class="ph-emoji">👕</span>Merch is Live!</div>
+              <span class="news-chip">Merch</span>
+            </div>
+            <div class="news-date">Aug 20, 2026</div>
+            <div class="news-title">Official Chibi Wibu merch store on Redbubble is now live — tees, stickers, and mugs available worldwide</div>
+          </a>
+          <a href="news/vtuber-collab-debut.html" class="news-card hidden-news" style="--d:.04s">
+            <div class="news-img-wrap">
+              <div class="news-img-ph"><span class="ph-emoji">🤝</span>VTuber Collab</div>
+              <span class="news-chip">Collab</span>
+            </div>
+            <div class="news-date">Aug 10, 2026</div>
+            <div class="news-title">Excited to announce a character design collab with a rising EN VTuber debuting this September!</div>
+          </a>
+          <a href="news/wacom-partnership.html" class="news-card hidden-news" style="--d:.08s">
+            <div class="news-img-wrap">
+              <div class="news-img-ph"><span class="ph-emoji">🖊️</span>Wacom Partner</div>
+              <span class="news-chip">Partnership</span>
+            </div>
+            <div class="news-date">Aug 1, 2026</div>
+            <div class="news-title">Thrilled to join the Wacom affiliate programme — check out my recommended tablet list!</div>
+          </a>
+          <a href="news/wallpaper-pack-release.html" class="news-card hidden-news" style="--d:.12s">
+            <div class="news-img-wrap">
+              <div class="news-img-ph"><span class="ph-emoji">🖼️</span>Wallpaper Drop</div>
+              <span class="news-chip">Digital Shop</span>
+            </div>
+            <div class="news-date">Jul 22, 2026</div>
+            <div class="news-title">6 new 4K desktop wallpapers featuring original chibi characters are now in the digital shop</div>
+          </a>
+          <a href="news/commission-waitlist-update.html" class="news-card hidden-news" style="--d:.16s">
+            <div class="news-img-wrap">
+              <div class="news-img-ph"><span class="ph-emoji">📋</span>Queue Update</div>
+              <span class="news-chip">Update</span>
+            </div>
+            <div class="news-date">Jul 10, 2026</div>
+            <div class="news-title">Commission queue update — all Q3 orders have been delivered. Thank you for your patience! 💕</div>
+          </a>
+        </div>
+        <div class="news-more-wrap reveal">
+          <button class="news-more-btn" id="newsMoreBtn" aria-label="Load more news">
+            <span id="newsMoreIcon">···</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ARTICLES / SEO SECTION — paling bawah ═══ -->
+    <section id="articles" class="section-wrap">
+      <div class="section-head reveal">
+        <p class="s-label">Tips &amp; Updates</p>
+        <h2 class="s-title">📝 Latest Articles 📝</h2>
+        <p class="s-sub">Creator guides, art tips, and behind-the-scenes stories for the global VTuber community.</p>
+      </div>
+      <div class="article-grid">
+        <a href="articles/top-5-vtuber-emote-ideas.html" class="article-card glass-card reveal" style="--d:.05s">
+          <div class="article-thumb-placeholder" style="background:linear-gradient(135deg,rgba(161,196,253,.25),rgba(201,184,255,.2));">
+            <span class="atp-emoji">🎭</span>
+          </div>
+          <div class="article-body">
+            <div class="tag-row">
+              <span class="a-tag geo">🌍 Global / English</span>
+              <span class="a-tag tip">💡 Tips</span>
+            </div>
+            <h3 class="article-title">Top 5 VTuber Chibi Emote Ideas for New Streamers</h3>
+            <p class="article-excerpt">Discover the most engaging emote expressions to boost your Twitch subs and chat activity — perfect for debut streams.</p>
+            <span class="article-read-more">Read More →</span>
+          </div>
+        </a>
+        <a href="articles/how-i-draw-chibi-eyes.html" class="article-card glass-card reveal" style="--d:.12s">
+          <div class="article-thumb-placeholder" style="background:linear-gradient(135deg,rgba(181,234,215,.25),rgba(255,209,102,.15));">
+            <span class="atp-emoji">🖌️</span>
+          </div>
+          <div class="article-body">
+            <div class="tag-row">
+              <span class="a-tag cat">🎨 Tutorial</span>
+              <span class="a-tag geo">🌏 EN/ID</span>
+            </div>
+            <h3 class="article-title">How I Draw Chibi Eyes — Step-by-Step with Clip Studio Paint</h3>
+            <p class="article-excerpt">A quick walkthrough of my coloring process — from sketch to final shading using Clip Studio Paint and Wacom Cintiq.</p>
+            <span class="article-read-more">Read More →</span>
+          </div>
+        </a>
+        <a href="articles/vtuber-asset-checklist.html" class="article-card glass-card reveal" style="--d:.19s">
+          <div class="article-thumb-placeholder" style="background:linear-gradient(135deg,rgba(255,209,102,.2),rgba(255,183,197,.2));">
+            <span class="atp-emoji">📋</span>
+          </div>
+          <div class="article-body">
+            <div class="tag-row">
+              <span class="a-tag geo">🌍 Global / English</span>
+              <span class="a-tag news">📣 Guide</span>
+            </div>
+            <h3 class="article-title">The Ultimate VTuber Asset Checklist: What to Order Before Your Debut</h3>
+            <p class="article-excerpt">From PNG tubers to overlay emotes — here's exactly what art assets you need ready before going live on YouTube or Twitch.</p>
+            <span class="article-read-more">Read More →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer glass-card">
+    <div class="footer-grid">
+      <div class="f-brand">
+        <div class="f-logo">✨ VoruVoru</div>
+        <p class="f-desc">Custom chibi commissions for VTubers, streamers &amp; anime fans worldwide. Currently open! 💕</p>
+        <div class="f-socials">
+          <a href="https://twitter.com/chibiwibuart"   target="_blank" rel="noopener" class="f-social-btn">Twitter</a>
+          <a href="https://instagram.com/chibiwibuart" target="_blank" rel="noopener" class="f-social-btn">Instagram</a>
+          <a href="https://tiktok.com/@chibiwibuart"   target="_blank" rel="noopener" class="f-social-btn">TikTok</a>
+          <a href="https://ko-fi.com/chibiwibuart"     target="_blank" rel="noopener" class="f-social-btn">Ko-fi ☕</a>
+        </div>
+      </div>
+      <nav aria-label="Quick links">
+        <h5 class="f-col-title">Navigate</h5>
+        <ul class="f-links">
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#articles">Articles</a></li>
+          <li><a href="#commissions">Commissions</a></li>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#affiliates">Affiliates</a></li>
+          <li><a href="#order">Order Now</a></li>
+        </ul>
+
+        <!-- Affiliate quick links in footer -->
+        <div class="aff-footer-bar">
+          <p class="aff-footer-label">Affiliate Links</p>
+          <div class="aff-footer-links">
+            <a href="YOUR_WACOM_AFFILIATE_LINK"     target="_blank" rel="noopener sponsored" class="aff-footer-link">Wacom ↗</a>
+            <a href="YOUR_CLIPSTUDIO_AFFILIATE_LINK" target="_blank" rel="noopener sponsored" class="aff-footer-link">Clip Studio ↗</a>
+            <a href="YOUR_IPAD_AFFILIATE_LINK"       target="_blank" rel="noopener sponsored" class="aff-footer-link">iPad ↗</a>
+            <a href="YOUR_AMAZON_GENERAL_LINK"       target="_blank" rel="noopener sponsored" class="aff-footer-link">Amazon ↗</a>
+            <a href="#" class="aff-footer-link disabled" aria-disabled="true">Skillshare (soon)</a>
+            <a href="#" class="aff-footer-link disabled" aria-disabled="true">Printify (soon)</a>
+          </div>
+        </div>
+      </nav>
+      <nav aria-label="Legal links">
+        <h5 class="f-col-title">Legal</h5>
+        <ul class="f-links">
+          <li><a href="tos.html">Terms of Service</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="license.html">Art License</a></li>
+          <li><a href="admin.html" rel="nofollow">Backoffice</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 VoruVoru · rrudiawan@gmail.com 🌸</span>
+      <span>Payments via PayPal · Hosted on GitHub Pages</span>
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════ CMS DATA RUNTIME ═══════════════ -->
+  <script>
+  (async function(){
+    const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    async function getCmsData(){
+      if(new URLSearchParams(location.search).get('preview')==='1'){
+        try { const d=localStorage.getItem('chibiCmsDraft'); if(d) return JSON.parse(d); } catch(e){}
+      }
+      try{
+        const r=await fetch('cms-data.json?ts='+Date.now(),{cache:'no-store'});
+        if(r.ok) return await r.json();
+      }catch(e){ console.warn('[ChibiWibu CMS] data unavailable',e); }
+      return null;
+    }
+    function renderGallery(items){
+      const el=document.getElementById('gallerySlider'); if(!el||!Array.isArray(items)) return;
+      el.innerHTML=items.map((x,i)=>`<div class="slide-card" data-cat="${esc(x.category||'art')}">${x.image?`<img src="${esc(x.image)}" loading="lazy" decoding="async" alt="${esc(x.title||'Artwork')}" />`:`<div class="art-placeholder"><span class="art-emoji">🎨</span>${esc(x.title||'Artwork')}</div>`}<div class="slide-caption"><span>${esc(x.title||'Artwork')}</span></div></div>`).join('');
+      const dots=document.getElementById('slideDots'); if(dots) dots.innerHTML='';
+    }
+    function renderPricing(items){
+      const el=document.querySelector('.pricing-row'); if(!el||!Array.isArray(items)) return;
+      el.innerHTML=items.map((x,i)=>`<div class="price-card glass-card reveal ${x.featured?'featured':''}" style="--d:${.05+i*.1}s">${x.featured?'<div class="pc-ribbon">Most Popular 💕</div>':''}<div class="pc-icon">${esc(x.icon||'🎨')}</div><h3 class="pc-name">${esc(x.name)}</h3><p class="pc-desc">${esc(x.description)}</p><div class="pc-price">$${esc(x.price)}<span>${esc(x.suffix||'/personal')}</span></div><div class="pc-days">⏱ ${esc(x.delivery||'')}</div><ul class="pc-feats">${(x.features||[]).map(f=>`<li>${esc(f)}</li>`).join('')}</ul><div class="paypal-wrap" id="paypal-${esc(x.key||('tier'+i))}"></div><p class="setup-note paypal-setup-note" hidden>PayPal checkout will appear after Live Client ID is configured.</p><button class="btn-altorder" data-tier="${esc(x.name)} - Personal ($${esc(x.price)})">Or fill the request form ↓</button></div>`).join('');
+    }
+    function renderArticles(items){
+      const el=document.querySelector('#articles .article-grid'); if(!el||!Array.isArray(items)) return;
+      el.innerHTML=items.map((x,i)=>`<a href="${esc(x.url||'#')}" class="article-card glass-card reveal" style="--d:${.05+i*.07}s">${x.image?`<img class="article-thumb" src="${esc(x.image)}" alt="${esc(x.title)}" loading="lazy">`:`<div class="article-thumb-placeholder"><span class="atp-emoji">📝</span></div>`}<div class="article-body"><div class="tag-row">${(x.tags||[]).map(t=>`<span class="a-tag geo">${esc(t)}</span>`).join('')}</div><h3 class="article-title">${esc(x.title)}</h3><p class="article-excerpt">${esc(x.excerpt||'')}</p><span class="article-read-more">Read More →</span></div></a>`).join('');
+    }
+    function renderNews(items){
+      const el=document.getElementById('newsGrid'); if(!el||!Array.isArray(items)) return;
+      el.innerHTML=items.map((x,i)=>`<a href="${esc(x.url||'#')}" class="news-card reveal ${i>=4?'hidden-news':''}" style="--d:${.04+(i%4)*.04}s"><div class="news-img-wrap">${x.image?`<img src="${esc(x.image)}" alt="${esc(x.title)}" loading="lazy">`:`<div class="news-img-ph"><span class="ph-emoji">📰</span>${esc(x.category||'Update')}</div>`}<span class="news-chip">${esc(x.category||'Update')}</span></div><div class="news-date">${esc(x.date||'')}</div><div class="news-title">${esc(x.title)}</div></a>`).join('');
+    }
+    function renderSite(s){
+      if(!s) return;
+      const q=(sel,val,html=false)=>{const el=document.querySelector(sel);if(el&&val!=null){if(html) el.innerHTML=val; else el.textContent=val;}};
+      q('.hero-eyebrow',s.heroEyebrow);
+      if(s.heroTitleLine1||s.heroTitleAccent) q('.hero-h1',`${esc(s.heroTitleLine1||'')}<br><span class="gradient-text">${esc(s.heroTitleAccent||'')}</span>`,true);
+      q('.hero-sub',s.heroSubtitle);
+      const nums=document.querySelectorAll('.hero-badges .badge-n');
+      if(nums[0]&&s.happyClients) nums[0].textContent=s.happyClients;
+      if(nums[1]&&s.delivery) nums[1].textContent=s.delivery;
+      if(nums[2]&&s.rating) nums[2].textContent=s.rating;
+    }
+    const data=await getCmsData(); if(!data) return;
+    renderSite(data.site); renderGallery(data.gallery); renderPricing(data.pricing); renderNews(data.news); renderArticles(data.articles);
+    document.dispatchEvent(new CustomEvent('chibiCmsReady'));
+  })();
+  </script>
+
+  <!-- ═══════════════ JAVASCRIPT ═══════════════ -->
+  <script>
+/* ──────────────────────────────────────────────────────────
+   CHIBI WIBU ART v4 — Inline JavaScript
+   1. Image Protection
+   2. Mobile Nav
+   3. Scroll Reveal
+   4. Slideshow (arrows + dots + keyboard + touch)
+   5. Lightbox
+   6. PayPal
+   7. Formspree
+   8. Tier Pre-select
+   9. Toast
+────────────────────────────────────────────────────────── */
+const SITE_CONFIG = Object.freeze({
+  paypalClientId: 'YOUR_CLIENT_ID',
+  formspreeFormId: 'YOUR_FORM_ID',
+  ownerWhatsApp: '6281234567890',
+  callMeBotApiKey: 'YOUR_CALLMEBOT_APIKEY'
+});
+
+function isConfigured(value){
+  return Boolean(value && !/^YOUR_/i.test(value) && value !== '6281234567890');
+}
+
+const $ = (s, c=document) => c.querySelector(s);
+const $$= (s, c=document) => [...c.querySelectorAll(s)];
+
+/* 1. IMAGE PROTECTION */
+document.addEventListener('contextmenu', e => { if(e.target.tagName==='IMG') e.preventDefault(); });
+document.addEventListener('dragstart',   e => { if(e.target.tagName==='IMG') e.preventDefault(); });
+
+/* 2. MOBILE NAV */
+(function(){
+  const burger = $('#navBurger'), links = $('#navLinks');
+  if(!burger) return;
+  burger.addEventListener('click', () => {
+    const o = links.classList.toggle('open');
+    burger.setAttribute('aria-expanded', String(o));
+  });
+  $$('.nav-links a').forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('open');
+    burger.setAttribute('aria-expanded','false');
+  }));
+  document.addEventListener('click', e => {
+    if(!e.target.closest('#navbar') && links.classList.contains('open')){
+      links.classList.remove('open');
+      burger.setAttribute('aria-expanded','false');
+    }
+  });
+})();
+
+/* 3. SCROLL REVEAL */
+(function(){
+  if(!('IntersectionObserver' in window)){
+    $$('.reveal').forEach(el => el.classList.add('is-visible'));
+    return;
+  }
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.07 });
+  $$('.reveal').forEach(el => io.observe(el));
+})();
+
+/* 4. SLIDESHOW */
+(function(){
+  const slider   = $('#gallerySlider');
+  const prevBtn  = $('#slidePrev');
+  const nextBtn  = $('#slideNext');
+  const dotsWrap = $('#slideDots');
+  if(!slider) return;
+
+  const cards = $$('.slide-card', slider);
+  let current = 0;
+
+  // Build dots
+  cards.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'dot' + (i===0?' active':'');
+    d.setAttribute('aria-label', `Go to slide ${i+1}`);
+    d.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(d);
+  });
+
+  function getDots(){ return $$('.dot', dotsWrap); }
+
+  function goTo(idx){
+    current = Math.max(0, Math.min(idx, cards.length-1));
+    const card  = cards[current];
+    const offset = card.offsetLeft - slider.offsetLeft
+      - (slider.clientWidth/2 - card.offsetWidth/2);
+    slider.scrollTo({ left: offset, behavior: 'smooth' });
+    getDots().forEach((d,i) => d.classList.toggle('active', i===current));
+  }
+
+  // Arrows
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  // Keyboard
+  document.addEventListener('keydown', e => {
+    if(e.key==='ArrowLeft')  goTo(current-1);
+    if(e.key==='ArrowRight') goTo(current+1);
+  });
+
+  // Sync dots on manual scroll (scroll-snap)
+  let scrollTimer;
+  slider.addEventListener('scroll', () => {
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => {
+      let closest=0, minDist=Infinity;
+      cards.forEach((c,i) => {
+        const center = slider.scrollLeft + slider.clientWidth/2;
+        const dist = Math.abs(c.offsetLeft + c.offsetWidth/2 - slider.scrollLeft - slider.offsetLeft - slider.clientWidth/2);
+        // simpler: just distance from center
+        const cardCenter = c.offsetLeft - slider.offsetLeft + c.offsetWidth/2;
+        const d2 = Math.abs(cardCenter - (slider.scrollLeft + slider.clientWidth/2));
+        if(d2 < minDist){ minDist=d2; closest=i; }
+      });
+      current = closest;
+      getDots().forEach((d,i) => d.classList.toggle('active', i===current));
+    }, 80);
+  });
+
+  // Touch swipe support
+  let touchX=0;
+  slider.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, {passive:true});
+  slider.addEventListener('touchend',   e => {
+    const dx = e.changedTouches[0].clientX - touchX;
+    if(Math.abs(dx) > 40) dx < 0 ? goTo(current+1) : goTo(current-1);
+  });
+
+  // Lightbox on card click
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const img = card.querySelector('img');
+      if(img && img.src) openLightbox(img.src, img.alt);
+    });
+  });
+})();
+
+/* 5. LIGHTBOX */
+const lightbox = $('#lightbox');
+const lbImg    = $('#lb-img');
+const lbClose  = $('#lb-close');
+
+function openLightbox(src,alt){
+  if(!lightbox) return;
+  lbImg.src=src; lbImg.alt=alt||'';
+  lightbox.classList.add('open');
+  document.body.style.overflow='hidden';
+  lbClose.focus();
+}
+function closeLightbox(){
+  if(!lightbox) return;
+  lightbox.classList.remove('open');
+  document.body.style.overflow='';
+  lbImg.src='';
+}
+if(lightbox){
+  lbClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', e=>{ if(e.target===lightbox) closeLightbox(); });
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape'&&lightbox.classList.contains('open')) closeLightbox(); });
+}
+
+/* LAZY IMAGES */
+(function(){
+  const reveal = img => img.classList.add('loaded');
+  $$('img:not([data-src])').forEach(img => img.complete ? reveal(img) : img.addEventListener('load',()=>reveal(img)));
+  if(!('IntersectionObserver' in window)){
+    $$('img[data-src]').forEach(img=>{ img.src=img.dataset.src; reveal(img); });
+    return;
+  }
+  const io = new IntersectionObserver((ents,obs)=>{
+    ents.forEach(e=>{ if(!e.isIntersecting)return;
+      const img=e.target; img.src=img.dataset.src; img.removeAttribute('data-src');
+      img.addEventListener('load',()=>reveal(img)); img.addEventListener('error',()=>reveal(img));
+      obs.unobserve(img); });
+  },{rootMargin:'200px 0px'});
+  $$('img[data-src]').forEach(img=>io.observe(img));
+})();
+
+/* 6. PAYPAL — load only when configured */
+async function initPayPal(){
+  const setupNotes = $$('.paypal-setup-note');
+  if(!isConfigured(SITE_CONFIG.paypalClientId)){
+    setupNotes.forEach(n => n.hidden = false);
+    $$('.paypal-wrap').forEach(el => el.classList.add('is-unconfigured'));
+    console.info('[ChibiWibu] PayPal disabled until SITE_CONFIG.paypalClientId is set.');
+    return;
+  }
+
+  await new Promise((resolve,reject)=>{
+    if(window.paypal) return resolve();
+    const sc=document.createElement('script');
+    sc.src=`https://www.paypal.com/sdk/js?client-id=${encodeURIComponent(SITE_CONFIG.paypalClientId)}&currency=USD`;
+    sc.onload=resolve; sc.onerror=reject; document.head.appendChild(sc);
+  }).catch(()=>null);
+
+  if(typeof paypal==='undefined'){
+    setupNotes.forEach(n => { n.hidden=false; n.textContent='PayPal could not load. Please try again later.'; });
+    return;
+  }
+
+  const STYLE={layout:'horizontal',color:'gold',shape:'pill',label:'buynow',height:38,tagline:false};
+  function btn(id,amt,desc){
+    const el=document.querySelector(id); if(!el)return;
+    paypal.Buttons({ style:STYLE,
+      createOrder:(d,a)=>a.order.create({purchase_units:[{description:desc,amount:{value:amt,currency_code:'USD'}}]}),
+      onApprove:(d,a)=>a.order.capture().then(det=>showToast(`Payment confirmed, ${det.payer?.name?.given_name || 'thank you'}! 🎉`)),
+      onError:err=>{ console.error(err); showToast('Payment failed. Please try again.','error'); }
+    }).render(id);
+  }
+  btn('#paypal-headshot','30.00','Chibi Commission – Headshot (Personal)');
+  btn('#paypal-halfbody','50.00','Chibi Commission – Half-Body (Personal)');
+  btn('#paypal-fullbody','70.00','Chibi Commission – Full-Body (Personal)');
+  btn('#paypal-shop1','12.00','Chibi Emote Pack Vol.1');
+  btn('#paypal-shop2','5.00','Chibi Base Poses Pack');
+  btn('#paypal-shop3','8.00','Wallpaper Pack');
+  btn('#paypal-shop4','10.00','Twitch Emote Template');
+}
+window.addEventListener('load', initPayPal);
+
+/* 7. FORMSPREE + WHATSAPP NOTIF OWNER + EMAIL NOTIF
+   ────────────────────────────────────────────────────
+   SETUP (wajib isi sebelum deploy):
+   ① OWNER_WA  → nomor WhatsApp pemilik situs, format internasional
+                  contoh: "6281234567890" (Indonesia, tanpa + atau spasi)
+   ② Formspree → di dashboard formspree.io, aktifkan "Email Notifications"
+                  ke rrudiawan@gmail.com (sudah otomatis saat form submit)
+   ③ CallMeBot → GRATIS, untuk WA notif ke pemilik:
+                  - Kirim pesan ke +34 644 59 78 71 (WhatsApp): "I allow callmebot to send me messages"
+                  - Tunggu reply: "API Activated for your phone number. Your APIKEY is XXXXXX"
+                  - Isi CALLMEBOT_APIKEY di bawah dengan key tersebut
+   ─────────────────────────────────────────────────── */
+(function(){
+  /* ── KONFIGURASI OWNER — GANTI DI SINI ── */
+  const OWNER_WA = SITE_CONFIG.ownerWhatsApp;
+  const CALLMEBOT_APIKEY = SITE_CONFIG.callMeBotApiKey;
+  /* ──────────────────────────────────────── */
+
+  const form   = $('#commissionForm');
+  const btn    = $('#submitBtn');
+  const status = $('#formStatus');
+  if(!form) return;
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const orig = btn.textContent;
+    btn.textContent = 'Sending… 🌸';
+    btn.disabled = true;
+    status.textContent = '';
+    status.className = 'fstatus';
+
+    /* Kumpulkan data form untuk pesan notif */
+    const fd   = new FormData(form);
+    const name = fd.get('name')     || '(no name)';
+    const tier = fd.get('tier')     || '(no tier)';
+    const waNo = fd.get('whatsapp') || '-';
+    const email= fd.get('email')    || '-';
+
+    try {
+      if(!isConfigured(SITE_CONFIG.formspreeFormId)){
+        throw new Error('formspree_unconfigured');
+      }
+      const endpoint = `https://formspree.io/f/${SITE_CONFIG.formspreeFormId}`;
+      /* ── STEP 1: Kirim ke Formspree (simpan data + email notif ke owner) ── */
+      const res = await fetch(endpoint, {
+        method : 'POST',
+        body   : fd,
+        headers: { Accept: 'application/json' }
+      });
+      if(!res.ok) throw new Error('formspree_failed');
+
+      /* ── STEP 2: Kirim WhatsApp notif ke OWNER via CallMeBot ── */
+      if(isConfigured(CALLMEBOT_APIKEY) && isConfigured(OWNER_WA)){
+        const waMsg = encodeURIComponent(
+          `🎨 NEW ORDER — VoruVoru\n`+
+          `👤 Name   : ${name}\n`+
+          `📦 Tier   : ${tier}\n`+
+          `📱 WA     : ${waNo}\n`+
+          `✉️ Email  : ${email}\n`+
+          `⏰ Time   : ${new Date().toLocaleString('id-ID',{timeZone:'Asia/Jakarta'})}\n`+
+          `👉 Check Formspree inbox for details.`
+        );
+        /* CallMeBot — fire & forget (static site tidak bisa sembunyikan API key;
+           pertimbangkan routing via Formspree webhook → Make.com/Zapier → WA
+           untuk keamanan lebih baik setelah launch) */
+        fetch(
+          `https://api.callmebot.com/whatsapp.php?phone=${OWNER_WA}&text=${waMsg}&apikey=${CALLMEBOT_APIKEY}`,
+          { mode:'no-cors' }
+        ).catch(()=>{}); /* silent fail — tidak blok UX */
+      }
+
+      /* ── STEP 3: Tampilkan sukses ke pemesan ── */
+      status.textContent = "✓ Request sent! I'll reply within 24h 💕";
+      status.classList.add('ok');
+      form.reset();
+      showToast('Order sent! Check your email for confirmation 📩','success');
+
+    } catch(err){
+      status.textContent = err.message==='formspree_unconfigured' ? 'Order form is being configured. Please email rrudiawan@gmail.com directly.' : '😢 Oops! Please email rrudiawan@gmail.com directly.';
+      status.classList.add('err');
+      btn.disabled = false;
+    }
+    setTimeout(()=>{ btn.textContent = orig; btn.disabled = false; }, 7000);
+  });
+})();
+
+
+/* 8. TIER PRE-SELECT */
+$$('.btn-altorder').forEach(b=>{
+  b.addEventListener('click',()=>{
+    const tier=b.dataset.tier, form=$('#order'), sel=$('#ftier');
+    if(form) form.scrollIntoView({behavior:'smooth',block:'start'});
+    if(sel&&tier) setTimeout(()=>{
+      const opt=[...sel.options].find(o=>o.text.startsWith(tier.split(' -')[0]));
+      if(opt) sel.value=opt.value; sel.focus();
+    },500);
+  });
+});
+
+/* 9. NEWS — LOAD MORE "..." */
+(function(){
+  const btn    = document.getElementById('newsMoreBtn');
+  const icon   = document.getElementById('newsMoreIcon');
+  const hidden = $$('.news-card.hidden-news');
+  if(!btn || !hidden.length){ if(btn) btn.classList.add('all-shown'); return; }
+
+  let showing = false;
+
+  btn.addEventListener('click', () => {
+    if(!showing){
+      // Reveal all hidden cards
+      hidden.forEach((card, i) => {
+        card.classList.add('shown');
+        // stagger reveal with scroll-reveal class
+        card.style.setProperty('--d', (i * 0.06) + 's');
+        card.classList.add('reveal');
+        // small timeout so reveal observer can pick them up
+        setTimeout(() => card.classList.add('is-visible'), 50 + i * 60);
+      });
+      icon.textContent = '×'; // change icon to close
+      btn.setAttribute('aria-label', 'Show less news');
+      showing = true;
+    } else {
+      // Collapse
+      hidden.forEach(card => {
+        card.classList.remove('shown','is-visible');
+      });
+      icon.textContent = '···';
+      btn.setAttribute('aria-label', 'Load more news');
+      showing = false;
+      // Scroll back to news section
+      document.getElementById('news').scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  });
+})();
+
+/* 10. AFFILIATE CATEGORY FILTER */
+(function(){
+  const tabs  = $$('.aff-tab');
+  const cards = $$('.aff-card[data-aff]');
+  if(!tabs.length) return;
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const filter = tab.dataset.aff;
+
+      cards.forEach(card => {
+        const match = filter === 'all' || card.dataset.aff === filter;
+        if(match){
+          card.style.removeProperty('display');
+          requestAnimationFrame(() => { card.style.opacity='1'; });
+        } else {
+          card.style.opacity='0';
+          setTimeout(() => {
+            const active = $('.aff-tab.active');
+            if(active && active.dataset.aff !== 'all' && card.dataset.aff !== active.dataset.aff){
+              card.style.display='none';
+            }
+          },210);
+        }
+      });
+    });
+  });
+})();
+
+/* 10. PLACEHOLDER LINK SAFETY */
+(function(){
+  $$('a[href^="YOUR_"], a[href*="YOUR_REDBUBBLE"]').forEach(a=>{
+    a.removeAttribute('target');
+    a.setAttribute('aria-disabled','true');
+    a.classList.add('is-unconfigured');
+    a.addEventListener('click',e=>{ e.preventDefault(); showToast('This partner link is not configured yet.','error'); });
+  });
+})();
+
+/* 11. TOAST */
+function showToast(msg,type='success'){
+  const prev=document.getElementById('cw-toast'); if(prev)prev.remove();
+  const t=document.createElement('div'); t.id='cw-toast';
+  t.setAttribute('role','status'); t.setAttribute('aria-live','polite');
+  t.textContent=msg;
+  Object.assign(t.style,{
+    position:'fixed',bottom:'5.5rem',left:'50%',transform:'translateX(-50%)',
+    background:type==='error'?'#ef4444':'linear-gradient(135deg,#FF6B9D,#ff9a9e)',
+    color:'#fff',fontFamily:"'Nunito','Quicksand',sans-serif",fontWeight:'800',fontSize:'.92rem',
+    padding:'.85rem 1.75rem',borderRadius:'999px',
+    boxShadow:'0 8px 32px rgba(255,107,157,.38)',zIndex:'9999',
+    textAlign:'center',maxWidth:'90vw',opacity:'0',
+    transition:'opacity 300ms ease',pointerEvents:'none',
+  });
+  document.body.appendChild(t);
+  requestAnimationFrame(()=>{ t.style.opacity='1'; });
+  setTimeout(()=>{ t.style.opacity='0'; t.addEventListener('transitionend',()=>t.remove(),{once:true}); },5500);
+}
+  </script>
+
+
+  <script>
+  document.addEventListener('chibiCmsReady',()=>{
+    document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-visible'));
+
+    // Re-bind tier buttons after CMS redraw.
+    document.querySelectorAll('.btn-altorder').forEach(b=>{
+      if(b.dataset.cmsBound) return; b.dataset.cmsBound='1';
+      b.addEventListener('click',()=>{
+        const form=document.getElementById('order'), sel=document.getElementById('ftier');
+        if(form) form.scrollIntoView({behavior:'smooth',block:'start'});
+        if(sel){ const name=(b.dataset.tier||'').split(' -')[0]; const opt=[...sel.options].find(o=>o.text.startsWith(name)); if(opt) sel.value=opt.value; }
+      });
+    });
+
+    // CMS-aware Gallery controls + lightbox.
+    const slider=document.getElementById('gallerySlider'), prev=document.getElementById('slidePrev'), next=document.getElementById('slideNext'), dots=document.getElementById('slideDots');
+    if(slider && dots){
+      const cards=[...slider.querySelectorAll('.slide-card')]; let current=0; dots.innerHTML='';
+      const go=i=>{ if(!cards.length)return; current=Math.max(0,Math.min(i,cards.length-1)); const c=cards[current]; slider.scrollTo({left:c.offsetLeft-slider.offsetLeft-(slider.clientWidth/2-c.offsetWidth/2),behavior:'smooth'}); [...dots.children].forEach((d,n)=>d.classList.toggle('active',n===current)); };
+      cards.forEach((c,i)=>{ const d=document.createElement('button'); d.className='dot'+(i===0?' active':''); d.setAttribute('aria-label','Go to slide '+(i+1)); d.onclick=()=>go(i); dots.appendChild(d); c.onclick=()=>{ const img=c.querySelector('img'); if(img && window.openLightbox) openLightbox(img.src,img.alt); }; });
+      if(prev) prev.onclick=()=>go(current-1); if(next) next.onclick=()=>go(current+1);
+    }
+
+    // CMS-aware News load-more.
+    const newsBtn=document.getElementById('newsMoreBtn'), newsIcon=document.getElementById('newsMoreIcon');
+    if(newsBtn){ const hidden=[...document.querySelectorAll('.news-card.hidden-news')]; let showing=false; if(!hidden.length) newsBtn.classList.add('all-shown'); else { newsBtn.classList.remove('all-shown'); newsBtn.onclick=()=>{ showing=!showing; hidden.forEach(c=>c.classList.toggle('shown',showing)); if(newsIcon) newsIcon.textContent=showing?'×':'···'; newsBtn.setAttribute('aria-label',showing?'Show less news':'Load more news'); }; } }
+  });
+  </script>
+
+</body>
+</html>

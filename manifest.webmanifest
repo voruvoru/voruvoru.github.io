@@ -1,0 +1,9 @@
+{
+  "name": "VoruVoru",
+  "short_name": "VoruVoru",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff0f7",
+  "theme_color": "#FF6B9D",
+  "icons": []
+}
