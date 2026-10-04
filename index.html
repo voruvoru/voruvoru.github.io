@@ -75,7 +75,7 @@
   <!-- ═══ FONTS ═══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
 
   <!-- PayPal SDK dimuat dinamis hanya setelah Live Client ID diisi pada SITE_CONFIG di bagian JavaScript. -->
 
@@ -1191,6 +1191,11 @@ select.fc option{background:#fff5f8;}
 section{scroll-margin-top:100px}.news-body{padding:20px}.news-body h3{font-size:1.1rem}.article-thumb{aspect-ratio:16/9;object-fit:cover}.reveal{opacity:1!important;transform:none!important}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media(max-width:600px){.hero-badges{flex-wrap:wrap}.badge-n{font-size:1.1rem}.hero-glass{overflow-wrap:anywhere}.blob,.hero-sparkles{display:none}.glass-card{backdrop-filter:none}}
+
+/* PageSpeed follow-up: readable text and spaced touch targets. */
+:root{--txt-muted:#705e78;--txt-soft:#685171}
+.s-label,.pc-price span,.pc-days,.btn-altorder,.tos-glass,.tos-link,.license-note a,.order-info-title,.info-block h4,.aff-inline-label,.form-title,.fl-hint,.fhint,.sc-meta,.sc-price,.setup-note,.aff-disclosure a,.a-tag.geo,.article-title,.article-read-more,.f-logo,.f-links a,.aff-footer-label,.f-bottom span{color:#71324f!important}
+.slide-dots{gap:8px;flex-wrap:wrap}.slide-dots .dot{width:28px;height:28px;min-width:28px;border:8px solid #fff2f7;background:#a32d59;box-sizing:border-box}.slide-dots .dot.active{background:#71324f;border-color:#f5ccdc;transform:none}
 </style>
 </head>
 
@@ -1224,7 +1229,7 @@ section{scroll-margin-top:100px}.news-body{padding:20px}.news-body h3{font-size:
     <div class="nav-inner">
       <a href="#" class="nav-logo">✨ VoruVoru</a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="about.html">About VoruVoru</a></li><li><a href="faq.html">FAQ</a></li><li><a href="#gallery">Gallery</a></li>
+        <li><a href="#gallery">Gallery</a></li>
         <li><a href="#news">News</a></li>
         <li><a href="#articles">Articles</a></li>
         <li><a href="#commissions">Commissions</a></li>
@@ -1728,7 +1733,7 @@ section{scroll-margin-top:100px}.news-body{padding:20px}.news-body h3{font-size:
       <nav aria-label="Quick links">
         <h2 class="f-col-title">Navigate</h2>
         <ul class="f-links">
-          <li><a href="about.html">About VoruVoru</a></li><li><a href="faq.html">FAQ</a></li><li><a href="#gallery">Gallery</a></li>
+          <li><a href="#gallery">Gallery</a></li>
           <li><a href="#news">News</a></li>
           <li><a href="#articles">Articles</a></li>
           <li><a href="#commissions">Commissions</a></li>
@@ -1764,7 +1769,7 @@ section{scroll-margin-top:100px}.news-body{padding:20px}.news-body h3{font-size:
     </div>
     <div class="f-bottom">
       <span>© 2026 VoruVoru · rrudiawan@gmail.com 🌸</span>
-      <span>Payments via PayPal · Hosted on GitHub Pages</span>
+      <span>Confirm payment terms by email · Hosted on GitHub Pages</span>
     </div>
   </footer>
 
