@@ -1,11 +1,7 @@
-# Chibi Wibu Art Backoffice
+# VoruVoru content editor
 
-- Open `admin.html`
-- Username: `admin`
-- Password: `123`
-- Edit content and click **Save Draft** / **Preview Site**.
-- To publish globally on GitHub Pages, enter GitHub owner, repository, branch and a Personal Access Token with Contents write permission, then click **Publish to GitHub**.
-- The token is kept in `sessionStorage` only and is never committed into the site.
+Open admin.html. The existing convenience login is admin / 123; this static client-side gate is not secure authentication. Save Draft and Preview Site use the same voruvoruCmsDraft key. Invalid drafts fall back to the public CMS data.
 
-## Security warning
-The `admin / 123` login is client-side because this project is static GitHub Pages. Anyone who can inspect `admin.html` can discover it. It is therefore a convenience gate, not real authentication. Real secure backoffice login requires a backend/auth provider (for example Cloudflare Access, Firebase Auth, Supabase Auth, Netlify Identity, or a server-side admin app).
+To publish without a token: click Download cms-data.json, upload that file at the repository root in GitHub, and commit to main. Upload real owned artwork under assets first and enter its path in the editor. Pending image files must be published before draft/export. Direct token-based publishing remains optional; no token is needed for browser uploads.
+
+Articles/news editing changes cards; their linked HTML files must also exist. Logout clears the session connection. Real secure admin access requires a backend or an authentication provider.

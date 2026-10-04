@@ -1,0 +1,19 @@
+# VoruVoru
+
+> Independent chibi art and creator asset commission website. Prices are in USD. Scope and availability must be confirmed by the owner.
+
+## Site information
+- [Home](https://voruvoru.github.io/): Commission tiers and creator guides.
+- [About](https://voruvoru.github.io/about.html): Brand and contact information.
+- [FAQ](https://voruvoru.github.io/faq.html): Commission preparation and usage questions.
+- [Request information](https://voruvoru.github.io/tos.html): Confirm scope and payment terms in writing.
+- [Art usage](https://voruvoru.github.io/license.html): Personal and commercial usage questions.
+- [Privacy](https://voruvoru.github.io/privacy.html): Data and local draft information.
+
+## Creator guides
+- [Emote ideas](https://voruvoru.github.io/articles/top-5-vtuber-emote-ideas.html)
+- [Chibi eyes tutorial](https://voruvoru.github.io/articles/how-to-draw-chibi-eyes.html)
+- [VTuber asset checklist](https://voruvoru.github.io/articles/vtuber-asset-checklist.html)
+
+## Accuracy notes
+Portfolio images have not yet been uploaded. No client counts, ratings or paid partnerships are asserted. Automated checkout and inquiry submission require configuration. llms.txt is a supplemental plain-text guide; it does not guarantee indexing, AI citation or ranking.

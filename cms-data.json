@@ -1,12 +1,12 @@
 {
   "site": {
-    "heroEyebrow": "🌸 Commissions Open",
+    "heroEyebrow": "🌸 Custom Chibi Commissions",
     "heroTitleLine1": "Your Character,",
     "heroTitleAccent": "Chibi-fied.",
-    "heroSubtitle": "Adorable custom art for VTubers, streamers & anime fans. Twitch emotes · PNG tubers · Character sheets 💕",
-    "happyClients": "200+",
-    "delivery": "48h",
-    "rating": "⭐ 5.0",
+    "heroSubtitle": "Custom chibi illustration for VTubers, streamers and anime fans worldwide. Emotes, PNG tubers, character art and creator assets.",
+    "happyClients": "Worldwide",
+    "delivery": "USD",
+    "rating": "Custom",
     "contactEmail": "rrudiawan@gmail.com"
   },
   "gallery": [
@@ -94,62 +94,65 @@
   "articles": [
     {
       "title": "Top 5 VTuber Chibi Emote Ideas for New Streamers",
-      "excerpt": "Discover the most engaging emote expressions to boost your Twitch subs and chat activity — perfect for debut streams.",
+      "excerpt": "Five practical emote concepts that cover the reactions most new VTubers and streamers use in chat.",
       "url": "articles/top-5-vtuber-emote-ideas.html",
       "tags": [
-        "🌍 Global / English",
-        "💡 Tips"
+        "VTuber",
+        "Emotes",
+        "Creator Guide"
       ],
       "image": ""
     },
     {
-      "title": "How I Draw Chibi Eyes — Step-by-Step with Clip Studio Paint",
-      "excerpt": "A quick walkthrough of my coloring process — from sketch to final shading using Clip Studio Paint and Wacom Cintiq.",
-      "url": "articles/how-i-draw-chibi-eyes.html",
+      "title": "How to Draw Chibi Eyes — Step-by-Step with Clip Studio Paint",
+      "excerpt": "A beginner-friendly workflow for sketching, shaping, coloring and shading expressive chibi eyes.",
+      "url": "articles/how-to-draw-chibi-eyes.html",
       "tags": [
-        "🎨 Tutorial",
-        "🌏 EN/ID"
+        "Chibi Art",
+        "Tutorial",
+        "Clip Studio Paint"
       ],
       "image": ""
     },
     {
-      "title": "The Ultimate VTuber Asset Checklist: What to Order Before Your Debut",
-      "excerpt": "From PNG tubers to overlay emotes — here's exactly what art assets you need ready before going live on YouTube or Twitch.",
+      "title": "VTuber Asset Checklist: What to Prepare Before Your Debut",
+      "excerpt": "A practical checklist covering avatars, emotes, overlays, reference art and other visual assets for a VTuber debut.",
       "url": "articles/vtuber-asset-checklist.html",
       "tags": [
-        "🌍 Global / English",
-        "📣 Guide"
+        "VTuber",
+        "Checklist",
+        "Debut Guide"
       ],
       "image": ""
     }
   ],
   "news": [
     {
-      "title": "New commission slots are open! Half-body and full-body queues now available for Q4 2026",
-      "date": "Sep 15, 2026",
+      "title": "VoruVoru website is now live on GitHub Pages",
+      "date": "Oct 4, 2026",
+      "category": "Site Update",
+      "url": "news/voruvoru-site-live.html",
+      "image": ""
+    },
+    {
+      "title": "Commission pricing and request information are now available",
+      "date": "Oct 4, 2026",
       "category": "Commissions",
-      "url": "news/new-commission-slots-open.html",
+      "url": "news/commission-guide-live.html",
       "image": ""
     },
     {
-      "title": "Chibi Emote Pack Vol.2 is now available in the shop — 12 new expressions including rage, cry, and hype",
-      "date": "Sep 5, 2026",
-      "category": "New Release",
-      "url": "news/emote-pack-vol2-launch.html",
+      "title": "Portfolio gallery is ready for new artwork uploads",
+      "date": "Oct 4, 2026",
+      "category": "Portfolio",
+      "url": "news/gallery-ready.html",
       "image": ""
     },
     {
-      "title": "My VTuber chibi art was featured in AnimeFest 2026's official digital programme!",
-      "date": "Aug 28, 2026",
-      "category": "Featured",
-      "url": "news/fanart-feature-animefest.html",
-      "image": ""
-    },
-    {
-      "title": "Official Chibi Wibu merch store on Redbubble is now live — tees, stickers, and mugs available worldwide",
-      "date": "Aug 20, 2026",
-      "category": "Merch",
-      "url": "news/merch-redbubble-launch.html",
+      "title": "Creator guides section launches with VTuber and chibi art resources",
+      "date": "Oct 4, 2026",
+      "category": "Articles",
+      "url": "news/creator-guides-launch.html",
       "image": ""
     }
   ]

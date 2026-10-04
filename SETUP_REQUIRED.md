@@ -1,12 +1,10 @@
-# Setup required before public launch
+# Owner setup still required
 
-The site now fails safely when credentials are still placeholders. Replace these values inside `SITE_CONFIG` in `index.html`:
-
-- `YOUR_CLIENT_ID` — PayPal Live Client ID
-- `YOUR_FORM_ID` — Formspree form ID
-- `6281234567890` — real owner WhatsApp number
-- `YOUR_CALLMEBOT_APIKEY` — CallMeBot API key (note: any client-side API key is publicly visible; a webhook/serverless relay is safer)
-
-Also replace all `YOUR_*_AFFILIATE_LINK`, `YOUR_REDBUBBLE`, and social handles.
-
-Portfolio artwork was intentionally **not fabricated**. Replace gallery placeholder cards with real owned/licensed WebP artwork.
+- Upload original or licensed portfolio artwork and replace category placeholders.
+- Confirm base prices, delivery estimates, scope, revision limits and commercial usage terms.
+- Verify that listed social/support links are owner accounts.
+- Configure Formspree and PayPal only when ready; no request or payment is marked successful without configuration.
+- Add verified affiliate links only after acceptance and disclose paid relationships.
+- Verify the URL-prefix property in Google Search Console; submit sitemap.xml and request indexing.
+- Review privacy and commission guidance against the services actually used.
+- For secure admin access, use a backend/auth provider; the static convenience gate is not authentication.
