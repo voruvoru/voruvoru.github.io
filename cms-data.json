@@ -1,6 +1,6 @@
 {
   "site": {
-    "heroEyebrow": "🌸 Custom Chibi Commissions",
+    "heroEyebrow": "🌸 Original Chibi Art",
     "heroTitleLine1": "Your Character,",
     "heroTitleAccent": "Chibi-fied.",
     "heroSubtitle": "Custom chibi illustration for VTubers, streamers and anime fans worldwide. Emotes, PNG tubers, character art and creator assets.",
@@ -21,7 +21,7 @@
       "image": ""
     },
     {
-      "title": "Full-Body Commission",
+      "title": "Full-Body Chibi Art",
       "category": "fullbody",
       "image": ""
     },
@@ -39,56 +39,6 @@
       "title": "Emote Bundle",
       "category": "emote",
       "image": ""
-    }
-  ],
-  "pricing": [
-    {
-      "key": "headshot",
-      "icon": "🙂",
-      "name": "Headshot",
-      "description": "Bust-up portrait — profile pics & stream overlays.",
-      "price": 30,
-      "suffix": "/personal",
-      "delivery": "3–5 business days",
-      "features": [
-        "1 character",
-        "Simple / gradient BG",
-        "PNG + PSD",
-        "1 revision"
-      ]
-    },
-    {
-      "key": "halfbody",
-      "icon": "✨",
-      "name": "Half-Body",
-      "description": "Waist-up — Discord stickers & banners.",
-      "price": 50,
-      "suffix": "/personal",
-      "delivery": "5–7 business days",
-      "features": [
-        "1 character",
-        "Detailed BG",
-        "PNG + PSD",
-        "2 revisions",
-        "Accessories"
-      ],
-      "featured": true
-    },
-    {
-      "key": "fullbody",
-      "icon": "🌟",
-      "name": "Full-Body",
-      "description": "Full character sheet — VTuber refs & merch prints.",
-      "price": 70,
-      "suffix": "/personal",
-      "delivery": "7–10 business days",
-      "features": [
-        "1 character",
-        "Full painted BG",
-        "PNG + PSD",
-        "3 revisions",
-        "Front + back poses"
-      ]
     }
   ],
   "articles": [
@@ -132,13 +82,6 @@
       "date": "Oct 4, 2026",
       "category": "Site Update",
       "url": "news/voruvoru-site-live.html",
-      "image": ""
-    },
-    {
-      "title": "Commission pricing and request information are now available",
-      "date": "Oct 4, 2026",
-      "category": "Commissions",
-      "url": "news/commission-guide-live.html",
       "image": ""
     },
     {
