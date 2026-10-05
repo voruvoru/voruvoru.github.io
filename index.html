@@ -52,7 +52,7 @@
         "name":"VoruVoru",
         "publisher":{"@id":"https://voruvoru.github.io/#organization"},
         "inLanguage":"en"
-      },
+      }
     ]
   }
   </script>
@@ -1633,7 +1633,7 @@ section{scroll-margin-top:100px}.news-body{padding:20px}.news-body h3{font-size:
       if(nums[2]&&s.rating) nums[2].textContent=s.rating;
     }
     const data=await getCmsData(); if(!data) return;
-    renderSite(data.site); renderGallery(data.gallery); renderPricing(data.pricing); renderNews(data.news); renderArticles(data.articles);
+    renderSite(data.site); renderGallery(data.gallery); renderNews(data.news); renderArticles(data.articles);
     document.dispatchEvent(new CustomEvent('chibiCmsReady'));
   })();
   </script>
