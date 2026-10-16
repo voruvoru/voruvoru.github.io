@@ -1,6 +1,6 @@
 {
   "site": {
-    "heroEyebrow": "🌸 Original Chibi Art",
+    "heroEyebrow": "🌸 Custom Chibi Commissions",
     "heroTitleLine1": "Your Character,",
     "heroTitleAccent": "Chibi-fied.",
     "heroSubtitle": "Custom chibi illustration for VTubers, streamers and anime fans worldwide. Emotes, PNG tubers, character art and creator assets.",
@@ -21,7 +21,7 @@
       "image": ""
     },
     {
-      "title": "Full-Body Chibi Art",
+      "title": "Full-Body Commission",
       "category": "fullbody",
       "image": ""
     },
@@ -46,28 +46,28 @@
       "key": "headshot",
       "icon": "🙂",
       "name": "Headshot",
-      "description": "Bust-up portrait for profile pictures and stream overlays.",
+      "description": "Bust-up portrait — profile pics & stream overlays.",
       "price": 30,
       "suffix": "/personal",
       "delivery": "3–5 business days",
       "features": [
         "1 character",
-        "Simple / gradient background",
+        "Simple / gradient BG",
         "PNG + PSD",
         "1 revision"
       ]
     },
     {
       "key": "halfbody",
-      "icon": "✦",
+      "icon": "✨",
       "name": "Half-Body",
-      "description": "Waist-up art for banners, stickers and creator profiles.",
+      "description": "Waist-up — Discord stickers & banners.",
       "price": 50,
       "suffix": "/personal",
       "delivery": "5–7 business days",
       "features": [
         "1 character",
-        "Detailed background",
+        "Detailed BG",
         "PNG + PSD",
         "2 revisions",
         "Accessories"
@@ -76,15 +76,15 @@
     },
     {
       "key": "fullbody",
-      "icon": "✧",
+      "icon": "🌟",
       "name": "Full-Body",
-      "description": "A complete character piece for references and merchandise.",
+      "description": "Full character sheet — VTuber refs & merch prints.",
       "price": 70,
       "suffix": "/personal",
       "delivery": "7–10 business days",
       "features": [
         "1 character",
-        "Painted background",
+        "Full painted BG",
         "PNG + PSD",
         "3 revisions",
         "Front + back poses"
@@ -135,6 +135,13 @@
       "image": ""
     },
     {
+      "title": "Commission pricing and request information are now available",
+      "date": "Oct 4, 2026",
+      "category": "Commissions",
+      "url": "news/commission-guide-live.html",
+      "image": ""
+    },
+    {
       "title": "Portfolio gallery is ready for new artwork uploads",
       "date": "Oct 4, 2026",
       "category": "Portfolio",
@@ -148,5 +155,10 @@
       "url": "news/creator-guides-launch.html",
       "image": ""
     }
-  ]
+  ],
+  "prices": {
+    "headshot": 30,
+    "halfbody": 50,
+    "fullbody": 70
+  }
 }
