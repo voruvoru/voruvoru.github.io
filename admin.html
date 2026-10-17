@@ -1,32 +1,202 @@
-<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
-<meta name='robots' content='noindex,nofollow'><title>VoruVoru Backoffice</title>
-<style>body{font-family:Arial;background:#fff7fb;color:#4a3550;margin:0}.w{max-width:900px;margin:auto;padding:24px}.c{background:white;padding:20px;border-radius:16px;margin:14px 0;border:1px solid #ead8e3}input,textarea{width:100%;padding:10px;margin:5px 0 12px;border:1px solid #d9c4d2;border-radius:8px;box-sizing:border-box}button{padding:10px 16px;border:0;border-radius:999px;font-weight:700;cursor:pointer}.p{background:#ff6b9d;color:white}.s{background:#f5e8f0;color:#e8457a}.hide{display:none}.row{display:flex;gap:8px;flex-wrap:wrap}.item{border:1px solid #ead8e3;padding:12px;border-radius:12px;margin:10px 0}.thumb{width:110px;height:110px;object-fit:cover;border-radius:10px}</style></head>
-<body><div class='w'>
-<div id='login' class='c'><h1>VoruVoru Backoffice</h1><input id='u' value='admin'><input id='pw' type='password' value='123'><button class='p' onclick='doLogin()'>Login</button><p id='lm'></p></div>
-<div id='app' class='hide'>
-<h1>VoruVoru Backoffice</h1>
-<div class='c'><h2>Site</h2><label>Hero title</label><input id='heroTitle'><label>Hero subtitle</label><textarea id='heroSubtitle'></textarea><label>Email</label><input id='email'></div>
-<div class='c'><h2>Harga</h2><label>Headshot USD</label><input id='ph' type='number'><label>Half Body USD</label><input id='pm' type='number'><label>Full Body USD</label><input id='pf' type='number'></div>
-<div class='c'><div class='row'><h2 style='flex:1'>Gallery</h2><button class='s' onclick='addG()'>+ Foto</button></div><div id='gl'></div></div>
-<div class='c'><button class='p' onclick='publish()'>Save & Publish</button><p id='st'>Ready.</p></div>
-</div></div>
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>VoruVoru Backoffice</title>
+<style>
+:root{--pink:#ff6b9d;--hot:#e8457a;--bg:#fff7fb;--txt:#4a3550;--soft:#765f7d;--line:#ecdbe6;--ok:#137a44;--err:#b4233f}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#fff7fb,#f5f1ff);color:var(--txt)}
+.wrap{max-width:980px;margin:auto;padding:24px}.card{background:#fffffff2;border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 12px 40px #7d456018;margin-bottom:18px}
+h1,h2{margin:.2em 0 .7em}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.full{grid-column:1/-1}
+label{display:block;font-size:.82rem;font-weight:750;color:var(--soft);margin-bottom:6px}input,textarea{width:100%;padding:11px 12px;border:1px solid #dcc9d7;border-radius:10px;font:inherit;background:#fff;color:var(--txt)}
+textarea{min-height:90px}.btn{border:0;border-radius:999px;padding:11px 18px;font-weight:800;cursor:pointer}.primary{background:var(--pink);color:#fff}.secondary{background:#f6eaf1;color:var(--hot)}.danger{background:#fff0f2;color:var(--err)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.status{font-size:.92rem;color:var(--soft);white-space:pre-wrap}.status.ok{color:var(--ok);font-weight:700}.status.err{color:var(--err);font-weight:700}.hidden{display:none}
+.item{border:1px solid var(--line);border-radius:14px;padding:14px;margin:10px 0;background:#fff}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.thumb{width:120px;height:120px;object-fit:cover;border-radius:12px;border:1px solid var(--line);background:#faf5f8}.small{font-size:.82rem;color:var(--soft)}.login{max-width:430px;margin:70px auto}
+.verify{background:#f4fff8;border:1px solid #cfe8d8;border-radius:12px;padding:12px;margin-top:12px}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.full{grid-column:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div id="loginBox" class="card login">
+    <h1>VoruVoru Backoffice</h1>
+    <p class="small">Login admin untuk mengubah situs.</p>
+    <label>Username</label><input id="user" value="admin">
+    <label style="margin-top:12px">Password</label><input id="pass" type="password" value="123">
+    <button class="btn primary" style="margin-top:16px" onclick="login()">Login</button>
+    <div id="loginMsg" class="status" style="margin-top:10px"></div>
+  </div>
+
+  <div id="app" class="hidden">
+    <div class="top">
+      <div><h1>VoruVoru Backoffice</h1><div class="small">Setelah publish, perubahan diverifikasi kembali dari GitHub.</div></div>
+      <div class="row"><button class="btn secondary" onclick="loadData()">Reload</button><button class="btn primary" onclick="publish()">Save & Publish</button></div>
+    </div>
+
+    <div class="card">
+      <h2>Konten utama</h2>
+      <div class="grid">
+        <div><label>Hero line 1</label><input id="heroLine1"></div>
+        <div><label>Hero accent</label><input id="heroAccent"></div>
+        <div class="full"><label>Hero subtitle</label><textarea id="heroSubtitle"></textarea></div>
+        <div><label>Email</label><input id="contactEmail"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Harga Commission</h2>
+      <div class="grid">
+        <div><label>Headshot (USD)</label><input id="priceHeadshot" type="number" min="0"></div>
+        <div><label>Half Body (USD)</label><input id="priceHalf" type="number" min="0"></div>
+        <div><label>Full Body (USD)</label><input id="priceFull" type="number" min="0"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="top"><h2>Gallery</h2><button class="btn secondary" onclick="addGallery()">+ Tambah karya</button></div>
+      <div id="galleryList"></div>
+    </div>
+
+    <div class="card">
+      <div class="top">
+        <div>
+          <b>Status</b>
+          <div id="status" class="status">Ready.</div>
+          <div id="verified" class="verify hidden"></div>
+        </div>
+        <button class="btn primary" onclick="publish()">Save & Publish</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
-const API='https://voruvoru-cms-api.onlineadmin00.workers.dev'; let data;
-const H=()=>({'authorization':'Bearer '+sessionStorage.getItem('vvtoken')});
-async function doLogin(){let r=await fetch(API+'/login',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({username:u.value,password:pw.value})});if(!r.ok){lm.textContent='Login gagal';return}let j=await r.json();sessionStorage.setItem('vvtoken',j.token);login.classList.add('hide');app.classList.remove('hide');load()}
-async function load(){st.textContent='Loading...';let r=await fetch(API+'/cms',{headers:H()});data=await r.json();let s=data.site||{};heroTitle.value=(s.heroTitleLine1||'')+' '+(s.heroTitleAccent||'');heroSubtitle.value=s.heroSubtitle||'';email.value=s.contactEmail||'';let pr=data.pricing||[];ph.value=(pr.find(x=>x.key==='headshot')||{}).price??30;pm.value=(pr.find(x=>x.key==='halfbody')||{}).price??50;pf.value=(pr.find(x=>x.key==='fullbody')||{}).price??70;renderG();st.textContent='Loaded'}
-function renderG(){gl.innerHTML='';(data.gallery||[]).forEach((g,i)=>{gl.insertAdjacentHTML('beforeend',`<div class="item"><input value="${g.caption||''}" oninput="data.gallery[${i}].caption=this.value"><input value="${g.image||''}" oninput="data.gallery[${i}].image=this.value"><input id="f${i}" type="file" accept="image/*"><div class="row"><button class="s" onclick="up(${i})">Upload gambar</button><button onclick="data.gallery.splice(${i},1);renderG()">Hapus</button></div></div>`)})}
-function addG(){data.gallery=data.gallery||[];data.gallery.push({caption:'New artwork',image:''});renderG()}
-async function up(i){let f=document.getElementById('f'+i).files[0];if(!f)return alert('Pilih gambar');let fd=new FormData();fd.append('file',f);st.textContent='Uploading...';let r=await fetch(API+'/upload',{method:'POST',headers:H(),body:fd});let j=await r.json();if(!r.ok){st.textContent='Upload gagal';return}data.gallery[i].image=j.path;renderG();st.textContent='Uploaded'}
-async function publish(){
-data.site=data.site||{};
-data.site.heroSubtitle=heroSubtitle.value;
-data.site.contactEmail=email.value;
-data.pricing=data.pricing||[];
-function setPrice(key,val){let x=data.pricing.find(i=>i.key===key);if(x)x.price=Number(val)}
-setPrice('headshot',ph.value);setPrice('halfbody',pm.value);setPrice('fullbody',pf.value);
-st.textContent='Publishing...';
-let r=await fetch(API+'/cms',{method:'PUT',headers:{...H(),'content-type':'application/json'},body:JSON.stringify(data)});
-st.textContent=r.ok?'Published. Tunggu GitHub Pages update.':'Publish gagal'
+const API='https://voruvoru-cms-api.onlineadmin00.workers.dev';
+let data=null;
+const auth=()=>({'authorization':'Bearer '+sessionStorage.getItem('vv_token')});
+const esc=(v='')=>String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
+
+function setStatus(msg,type=''){
+  status.textContent=msg; status.className='status '+type;
 }
-</script></body></html>
+async function login(){
+  loginMsg.textContent='Checking...';
+  try{
+    const r=await fetch(API+'/login',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({username:user.value,password:pass.value})});
+    const j=await r.json();
+    if(!r.ok) throw new Error(j.error||'login gagal');
+    sessionStorage.setItem('vv_token',j.token);
+    loginBox.classList.add('hidden'); app.classList.remove('hidden');
+    await loadData();
+  }catch(e){loginMsg.textContent='Login gagal: '+e.message}
+}
+async function loadData(){
+  verified.classList.add('hidden');
+  setStatus('Membaca data langsung dari GitHub...');
+  try{
+    const r=await fetch(API+'/cms?ts='+Date.now(),{headers:auth(),cache:'no-store'});
+    const j=await r.json();
+    if(!r.ok) throw new Error(j.error||r.status);
+    data=j.data;
+    fill();
+    setStatus('Data GitHub berhasil dimuat.','ok');
+  }catch(e){setStatus('Gagal membaca data: '+e.message,'err')}
+}
+function findPrice(key){
+  return (data.pricing||[]).find(x=>x.key===key);
+}
+function fill(){
+  const s=data.site||{};
+  heroLine1.value=s.heroTitleLine1||'';
+  heroAccent.value=s.heroTitleAccent||'';
+  heroSubtitle.value=s.heroSubtitle||'';
+  contactEmail.value=s.contactEmail||'';
+  priceHeadshot.value=findPrice('headshot')?.price ?? 30;
+  priceHalf.value=findPrice('halfbody')?.price ?? 50;
+  priceFull.value=findPrice('fullbody')?.price ?? 70;
+  renderGallery();
+}
+function renderGallery(){
+  galleryList.innerHTML='';
+  (data.gallery||[]).forEach((g,i)=>{
+    galleryList.insertAdjacentHTML('beforeend',`<div class="item">
+      <div class="row">
+        ${g.image?`<img class="thumb" src="/${esc(g.image)}?v=${Date.now()}" onerror="this.style.opacity=.2">`:`<div class="thumb"></div>`}
+        <div style="flex:1;min-width:250px">
+          <label>Judul karya</label><input value="${esc(g.title||'')}" oninput="data.gallery[${i}].title=this.value">
+          <label style="margin-top:8px">Kategori</label><input value="${esc(g.category||'art')}" oninput="data.gallery[${i}].category=this.value">
+          <label style="margin-top:8px">Path gambar</label><input value="${esc(g.image||'')}" readonly>
+          <div class="row" style="margin-top:8px">
+            <input id="file${i}" type="file" accept="image/*" style="max-width:320px">
+            <button class="btn secondary" onclick="uploadImage(${i})">Upload gambar</button>
+            <button class="btn danger" onclick="data.gallery.splice(${i},1);renderGallery()">Hapus</button>
+          </div>
+        </div>
+      </div>
+    </div>`);
+  });
+}
+function addGallery(){
+  data.gallery=data.gallery||[];
+  data.gallery.push({title:'New artwork',category:'art',image:''});
+  renderGallery();
+}
+async function uploadImage(i){
+  const f=document.getElementById('file'+i).files[0];
+  if(!f) return alert('Pilih gambar dulu.');
+  const fd=new FormData(); fd.append('file',f);
+  setStatus('Mengupload gambar ke GitHub...');
+  try{
+    const r=await fetch(API+'/upload',{method:'POST',headers:auth(),body:fd});
+    const j=await r.json();
+    if(!r.ok) throw new Error(j.error||r.status);
+    data.gallery[i].image=j.path;
+    renderGallery();
+    setStatus('Gambar sudah tersimpan di GitHub. Klik Save & Publish untuk menyimpan data gallery.','ok');
+  }catch(e){setStatus('Upload gagal: '+e.message,'err')}
+}
+function setPrice(key,value){
+  data.pricing=data.pricing||[];
+  let x=data.pricing.find(i=>i.key===key);
+  if(!x){
+    x={key,name:key,price:Number(value),suffix:'/personal',features:[]};
+    data.pricing.push(x);
+  } else x.price=Number(value);
+}
+async function publish(){
+  if(!data) return;
+  verified.classList.add('hidden');
+  data.site=data.site||{};
+  data.site.heroTitleLine1=heroLine1.value;
+  data.site.heroTitleAccent=heroAccent.value;
+  data.site.heroSubtitle=heroSubtitle.value;
+  data.site.contactEmail=contactEmail.value;
+  setPrice('headshot',priceHeadshot.value);
+  setPrice('halfbody',priceHalf.value);
+  setPrice('fullbody',priceFull.value);
+
+  setStatus('Menyimpan ke GitHub dan memverifikasi hasil...');
+  try{
+    const r=await fetch(API+'/cms',{method:'PUT',headers:{...auth(),'content-type':'application/json'},body:JSON.stringify(data)});
+    const j=await r.json();
+    if(!r.ok) throw new Error(j.error||r.status);
+
+    data=j.saved;
+    fill();
+
+    const savedHead=(data.pricing||[]).find(x=>x.key==='headshot')?.price;
+    const savedHalf=(data.pricing||[]).find(x=>x.key==='halfbody')?.price;
+    const savedFull=(data.pricing||[]).find(x=>x.key==='fullbody')?.price;
+
+    setStatus('BERHASIL: data tersimpan dan sudah dibaca ulang dari GitHub.','ok');
+    verified.innerHTML=`<b>Verified GitHub</b><br>Headshot: $${savedHead} · Half Body: $${savedHalf} · Full Body: $${savedFull}<br><span class="small">Commit: ${j.commitSha||'-'}</span>`;
+    verified.classList.remove('hidden');
+  }catch(e){
+    setStatus('GAGAL publish: '+e.message,'err');
+  }
+}
+</script>
+</body>
+</html>

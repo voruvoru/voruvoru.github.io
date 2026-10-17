@@ -2231,9 +2231,13 @@ select.fc option{background:#fff5f8;}
         try { const d=localStorage.getItem('chibiCmsDraft'); if(d) return JSON.parse(d); } catch(e){}
       }
       try{
+        const r=await fetch('https://voruvoru-cms-api.onlineadmin00.workers.dev/public-cms?ts='+Date.now(),{cache:'no-store'});
+        if(r.ok) return await r.json();
+      }catch(e){ console.warn('[VoruVoru CMS] Worker data unavailable',e); }
+      try{
         const r=await fetch('cms-data.json?ts='+Date.now(),{cache:'no-store'});
         if(r.ok) return await r.json();
-      }catch(e){ console.warn('[VoruVoru CMS] data unavailable',e); }
+      }catch(e){ console.warn('[VoruVoru CMS] local data unavailable',e); }
       return null;
     }
     function renderGallery(items){
