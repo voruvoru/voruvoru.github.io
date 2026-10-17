@@ -2289,9 +2289,9 @@ select.fc option{background:#fff5f8;}
    9. Toast
 ────────────────────────────────────────────────────────── */
 const SITE_CONFIG = Object.freeze({
-  paypalClientId: 'BAAvTTpjaAaw7Uqk5nikGU2CsV63rxrPN7RZLuWqTkf4_Y5aMHHOSRp5SQFM8mH8oRqt5-4LsZpJpUDTFA',
+  paypalClientId: 'YOUR_CLIENT_ID',
   formspreeFormId: 'YOUR_FORM_ID',
-  ownerWhatsApp: '628989464207',
+  ownerWhatsApp: '6281234567890',
   callMeBotApiKey: 'YOUR_CALLMEBOT_APIKEY'
 });
 
@@ -2457,45 +2457,145 @@ if(lightbox){
 })();
 
 /* 6. PAYPAL — load only when configured */
-async function initPayPal(){
-  const setupNotes = $$('.paypal-setup-note');
-  if(!isConfigured(SITE_CONFIG.paypalClientId)){
-    setupNotes.forEach(n => n.hidden = false);
-    $$('.paypal-wrap').forEach(el => el.classList.add('is-unconfigured'));
-    console.info('[ChibiWibu] PayPal disabled until SITE_CONFIG.paypalClientId is set.');
-    return;
-  }
-
-  await new Promise((resolve,reject)=>{
-    if(window.paypal) return resolve();
-    const sc=document.createElement('script');
-    sc.src=`https://www.paypal.com/sdk/js?client-id=${encodeURIComponent(SITE_CONFIG.paypalClientId)}&currency=USD`;
-    sc.onload=resolve; sc.onerror=reject; document.head.appendChild(sc);
-  }).catch(()=>null);
-
+async async function initPayPal(){
   if(typeof paypal==='undefined'){
-    setupNotes.forEach(n => { n.hidden=false; n.textContent='PayPal could not load. Please try again later.'; });
+    console.warn('[VoruVoru] PayPal SDK not loaded.');
     return;
   }
 
-  const STYLE={layout:'horizontal',color:'gold',shape:'pill',label:'buynow',height:38,tagline:false};
-  function btn(id,amt,desc){
-    const el=document.querySelector(id); if(!el)return;
-    paypal.Buttons({ style:STYLE,
-      createOrder:(d,a)=>a.order.create({purchase_units:[{description:desc,amount:{value:amt,currency_code:'USD'}}]}),
-      onApprove:(d,a)=>a.order.capture().then(det=>showToast(`Payment confirmed, ${det.payer?.name?.given_name || 'thank you'}! 🎉`)),
-      onError:err=>{ console.error(err); showToast('Payment failed. Please try again.','error'); }
+  let cms = null;
+  try{
+    const r = await fetch('https://voruvoru-cms-api.onlineadmin00.workers.dev/public-cms?ts='+Date.now(), {cache:'no-store'});
+    if(r.ok) cms = await r.json();
+  }catch(e){}
+
+  if(!cms){
+    try{
+      const r = await fetch('cms-data.json?ts='+Date.now(), {cache:'no-store'});
+      if(r.ok) cms = await r.json();
+    }catch(e){}
+  }
+
+  const pricing = cms?.pricing || [];
+  const priceOf = (key, fallback) => {
+    const x = pricing.find(i => i.key === key);
+    const n = Number(x?.price);
+    return Number.isFinite(n) && n > 0 ? n.toFixed(2) : Number(fallback).toFixed(2);
+  };
+
+  const prices = {
+    headshot: priceOf('headshot', 30),
+    halfbody: priceOf('halfbody', 50),
+    fullbody: priceOf('fullbody', 70),
+    shop1: '12.00',
+    shop2: '5.00',
+    shop3: '8.00',
+    shop4: '10.00'
+  };
+
+  const STYLE = {
+    layout:'horizontal',
+    color:'gold',
+    shape:'pill',
+    label:'paypal',
+    height:38,
+    tagline:false
+  };
+
+  function btn(id, amountGetter, desc){
+    const el = document.querySelector(id);
+    if(!el) return;
+
+    el.innerHTML = '';
+
+    paypal.Buttons({
+      style: STYLE,
+      createOrder:(d,a)=>a.order.create({
+        purchase_units:[{
+          description: desc,
+          amount:{
+            value: amountGetter(),
+            currency_code:'USD'
+          }
+        }]
+      }),
+      onApprove:(d,a)=>a.order.capture().then(det=>{
+        const firstName = det?.payer?.name?.given_name || 'thank you';
+        showToast(`Payment confirmed, ${firstName}! 🎉`);
+      }),
+      onError:err=>{
+        console.error(err);
+        showToast('Payment failed. Please try again.','error');
+      }
     }).render(id);
   }
-  btn('#paypal-headshot','30.00','Chibi Commission – Headshot (Personal)');
-  btn('#paypal-halfbody','50.00','Chibi Commission – Half-Body (Personal)');
-  btn('#paypal-fullbody','70.00','Chibi Commission – Full-Body (Personal)');
-  btn('#paypal-shop1','12.00','Chibi Emote Pack Vol.1');
-  btn('#paypal-shop2','5.00','Chibi Base Poses Pack');
-  btn('#paypal-shop3','8.00','Wallpaper Pack');
-  btn('#paypal-shop4','10.00','Twitch Emote Template');
+
+  btn('#paypal-headshot', ()=>prices.headshot, 'VoruVoru Chibi Commission – Headshot');
+  btn('#paypal-halfbody', ()=>prices.halfbody, 'VoruVoru Chibi Commission – Half-Body');
+  btn('#paypal-fullbody', ()=>prices.fullbody, 'VoruVoru Chibi Commission – Full-Body');
+  btn('#paypal-shop1', ()=>prices.shop1, 'Chibi Emote Pack Vol.1');
+  btn('#paypal-shop2', ()=>prices.shop2, 'Chibi Base Poses Pack');
+  btn('#paypal-shop3', ()=>prices.shop3, 'Wallpaper Pack');
+  btn('#paypal-shop4', ()=>prices.shop4, 'Twitch Emote Template');
 }
 window.addEventListener('load', initPayPal);
+
+async function syncCommissionTierPrices(){
+  let cms = null;
+  try{
+    const r = await fetch('https://voruvoru-cms-api.onlineadmin00.workers.dev/public-cms?ts='+Date.now(), {cache:'no-store'});
+    if(r.ok) cms = await r.json();
+  }catch(e){}
+
+  if(!cms){
+    try{
+      const r = await fetch('cms-data.json?ts='+Date.now(), {cache:'no-store'});
+      if(r.ok) cms = await r.json();
+    }catch(e){}
+  }
+
+  const pricing = cms?.pricing || [];
+  const getPrice = (key, fallback) => {
+    const item = pricing.find(x => x.key === key);
+    const n = Number(item?.price);
+    return Number.isFinite(n) && n > 0 ? n : fallback;
+  };
+
+  const headshot = getPrice('headshot', 30);
+  const halfbody = getPrice('halfbody', 50);
+  const fullbody = getPrice('fullbody', 70);
+
+  const commercial = (base) => {
+    const n = Number(base) * 1.5;
+    return Number.isInteger(n) ? String(n) : n.toFixed(2);
+  };
+
+  const sel = document.getElementById('ftier');
+  if(!sel) return;
+
+  const options = [
+    { value:'', text:'Select tier…' },
+    { value:`Headshot — Personal ($${headshot})`, text:`Headshot — Personal ($${headshot})` },
+    { value:`Headshot — Commercial ($${commercial(headshot)}+)`, text:`Headshot — Commercial ($${commercial(headshot)}+)` },
+    { value:`Half-Body — Personal ($${halfbody})`, text:`Half-Body — Personal ($${halfbody})` },
+    { value:`Half-Body — Commercial ($${commercial(halfbody)}+)`, text:`Half-Body — Commercial ($${commercial(halfbody)}+)` },
+    { value:`Full-Body — Personal ($${fullbody})`, text:`Full-Body — Personal ($${fullbody})` },
+    { value:`Full-Body — Commercial ($${commercial(fullbody)}+)`, text:`Full-Body — Commercial ($${commercial(fullbody)}+)` },
+    { value:'Twitch Emotes Bundle', text:'Twitch Emotes Bundle' },
+    { value:'VTuber Asset Pack', text:'VTuber Asset Pack' },
+    { value:'Custom Commercial Art', text:'Custom Commercial Art' }
+  ];
+
+  sel.innerHTML = '';
+  options.forEach(o=>{
+    const opt=document.createElement('option');
+    opt.value=o.value;
+    opt.textContent=o.text;
+    sel.appendChild(opt);
+  });
+}
+window.addEventListener('load', syncCommissionTierPrices);
+
 
 /* 7. FORMSPREE + WHATSAPP NOTIF OWNER + EMAIL NOTIF
    ────────────────────────────────────────────────────
@@ -2590,7 +2690,8 @@ $$('.btn-altorder').forEach(b=>{
     const tier=b.dataset.tier, form=$('#order'), sel=$('#ftier');
     if(form) form.scrollIntoView({behavior:'smooth',block:'start'});
     if(sel&&tier) setTimeout(()=>{
-      const opt=[...sel.options].find(o=>o.text.startsWith(tier.split(' -')[0]));
+      const label=tier.split(' -')[0];
+      const opt=[...sel.options].find(o=>o.text.startsWith(label));
       if(opt) sel.value=opt.value; sel.focus();
     },500);
   });
